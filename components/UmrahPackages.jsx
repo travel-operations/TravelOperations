@@ -1,10 +1,11 @@
 "use client";
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Plane, Hotel, Bus, FileCheck2, Star, Calendar, BadgeCheck, ArrowUpRight, ShieldCheck, Phone } from 'lucide-react';
 import Link from 'next/link';
+import { supabase } from '@/lib/supabase';
 
-const packages = [
+const staticPackages = [
   {
     id: 1,
     tier: "Economy",
@@ -14,6 +15,8 @@ const packages = [
     nights: "8N Makkah · 5N Madinah",
     hotel: "3-star, 800m from Haram",
     rating: 4.6,
+    popular: false,
+    order_index: 1,
   },
   {
     id: 2,
@@ -25,6 +28,7 @@ const packages = [
     hotel: "4-star, 400m from Haram",
     rating: 4.8,
     popular: true,
+    order_index: 2,
   },
   {
     id: 3,
@@ -35,6 +39,8 @@ const packages = [
     nights: "12N Makkah · 7N Madinah",
     hotel: "5-star, 200m from Haram",
     rating: 4.9,
+    popular: false,
+    order_index: 3,
   },
   {
     id: 4,
@@ -45,17 +51,34 @@ const packages = [
     nights: "12N Makkah · 7N Madinah",
     hotel: "Hilton / Pullman, Haram view",
     rating: 5.0,
+    popular: false,
+    order_index: 4,
   },
 ];
 
 const inclusions = [
   { icon: FileCheck2, label: "Umrah e-visa" },
-  { icon: Plane, label: "Return airfare" },
-  { icon: Hotel, label: "Hotel (B&B)" },
-  { icon: Bus, label: "Ziyarat transport" },
+  { icon: Plane,      label: "Return airfare" },
+  { icon: Hotel,      label: "Hotel (B&B)" },
+  { icon: Bus,        label: "Ziyarat transport" },
 ];
 
 const UmrahPackages = () => {
+  const [packages, setPackages] = useState(staticPackages);
+
+  const fetchPackages = useCallback(() => {
+    if (!supabase) return;
+    supabase
+      .from('umrah_packages')
+      .select('*')
+      .order('order_index', { ascending: true })
+      .then(({ data }) => {
+        if (data && data.length > 0) setPackages(data);
+      });
+  }, []);
+
+  useEffect(() => { fetchPackages(); }, [fetchPackages]);
+
   return (
     <section className="py-24 md:py-32 bg-[#fbf9f6] grain">
       <div className="container mx-auto px-6 md:px-10">

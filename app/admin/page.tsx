@@ -4,7 +4,7 @@ import { supabase } from '@/lib/supabase';
 import {
   LayoutDashboard, ImageIcon, Map, Globe, FileText, LogOut,
   Plus, Pencil, Trash2, X, Check, AlertCircle, Eye, EyeOff,
-  ChevronUp, ChevronDown, Upload, Menu, ArrowLeft, ArrowUpRight,
+  ChevronUp, ChevronDown, Upload, Menu, ArrowLeft, ArrowUpRight, Moon,
 } from 'lucide-react';
 
 type Section = {
@@ -23,9 +23,10 @@ const SECTIONS: Section[] = [
   { key: 'tours_asia',        label: 'Asia Tours',        pageLabel: 'Tours Page', icon: Map,             table: 'tour_cards',    category: 'asia',        group: 'tours' },
   { key: 'tours_middle_east', label: 'Middle East Tours', pageLabel: 'Tours Page', icon: Map,             table: 'tour_cards',    category: 'middle_east', group: 'tours' },
   { key: 'tours_europe',      label: 'Europe Tours',      pageLabel: 'Tours Page', icon: Map,             table: 'tour_cards',    category: 'europe',      group: 'tours' },
-  { key: 'visa_cards',        label: 'Visa Cards',        pageLabel: 'Visa Page',  icon: Globe,           table: 'visa_cards' },
-  { key: 'visa_countries',    label: 'Visa Countries',    pageLabel: 'Visa Page',  icon: Globe,           table: 'visa_countries' },
-  { key: 'blog',              label: 'Blog Posts',        pageLabel: 'Blog Page',  icon: FileText,        table: 'blog_posts' },
+  { key: 'visa_cards',        label: 'Visa Cards',        pageLabel: 'Visa Page',    icon: Globe,           table: 'visa_cards' },
+  { key: 'visa_countries',    label: 'Visa Countries',    pageLabel: 'Visa Page',    icon: Globe,           table: 'visa_countries' },
+  { key: 'umrah',             label: 'Umrah Packages',    pageLabel: 'Umrah Page',   icon: Moon,            table: 'umrah_packages' },
+  { key: 'blog',              label: 'Blog Posts',        pageLabel: 'Blog Page',    icon: FileText,        table: 'blog_posts' },
 ];
 
 type Field = {
@@ -82,6 +83,17 @@ const FIELDS: Record<string, Field[]> = {
     { key: 'price',        label: 'Price (e.g. 13K)',                type: 'text' },
     { key: 'order_index',  label: 'Order',                           type: 'number' },
   ],
+  umrah: [
+    { key: 'tier',         label: 'Tier (e.g. Economy)',             type: 'text',     required: true },
+    { key: 'title',        label: 'Package Title (e.g. 15 Days)',    type: 'text',     required: true },
+    { key: 'price',        label: 'Price (e.g. 195,000)',            type: 'text',     required: true },
+    { key: 'image',        label: 'Image',                           type: 'text',     isImage: true },
+    { key: 'nights',       label: 'Nights (e.g. 8N Makkah · 5N Madinah)', type: 'text' },
+    { key: 'hotel',        label: 'Hotel (e.g. 3-star, 800m from Haram)', type: 'text' },
+    { key: 'rating',       label: 'Rating (e.g. 4.8)',               type: 'number' },
+    { key: 'popular',      label: 'Most Chosen / Popular',           type: 'checkbox' },
+    { key: 'order_index',  label: 'Order',                           type: 'number' },
+  ],
   blog: [
     { key: 'title',        label: 'Title',                           type: 'text',     required: true },
     { key: 'slug',         label: 'Slug (e.g. my-post)',             type: 'text',     required: true },
@@ -99,22 +111,25 @@ const displayCols: Record<string, string[]> = {
   tours:          ['country', 'title', 'price', 'featured'],
   visa_cards:     ['name', 'code', 'price', 'processing', 'is_featured'],
   visa_countries: ['name', 'code', 'price', 'order_index'],
+  umrah:          ['tier', 'title', 'price', 'nights', 'popular'],
   blog:           ['title', 'date', 'author', 'category'],
 };
 
 const OVERVIEW_GROUPS = [
-  { page: 'Home Page', keys: ['hero'] },
-  { page: 'Tours Page', keys: ['tours_asia', 'tours_middle_east', 'tours_europe'] },
-  { page: 'Visa Page', keys: ['visa_cards', 'visa_countries'] },
-  { page: 'Blog Page', keys: ['blog'] },
+  { page: 'Home Page',   keys: ['hero'] },
+  { page: 'Tours Page',  keys: ['tours_asia', 'tours_middle_east', 'tours_europe'] },
+  { page: 'Visa Page',   keys: ['visa_cards', 'visa_countries'] },
+  { page: 'Umrah Page',  keys: ['umrah'] },
+  { page: 'Blog Page',   keys: ['blog'] },
 ];
 
 const SIDEBAR_GROUPS = [
-  { label: null, keys: ['overview'] },
-  { label: 'Home', keys: ['hero'] },
+  { label: null,    keys: ['overview'] },
+  { label: 'Home',  keys: ['hero'] },
   { label: 'Tours', keys: ['tours_asia', 'tours_middle_east', 'tours_europe'] },
-  { label: 'Visa', keys: ['visa_cards', 'visa_countries'] },
-  { label: 'Blog', keys: ['blog'] },
+  { label: 'Visa',  keys: ['visa_cards', 'visa_countries'] },
+  { label: 'Umrah', keys: ['umrah'] },
+  { label: 'Blog',  keys: ['blog'] },
 ];
 
 function getSectionFields(key: string) {
@@ -126,6 +141,7 @@ function getSectionCols(key: string) {
   if (key.startsWith('tours_')) return displayCols['tours'];
   return displayCols[key] || [];
 }
+
 
 export default function AdminPage() {
   const [session, setSession]             = useState<any>(null);

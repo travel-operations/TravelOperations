@@ -75,44 +75,64 @@ create table if not exists blog_posts (
   created_at   timestamptz default now()
 );
 
+create table if not exists umrah_packages (
+  id           uuid        default gen_random_uuid() primary key,
+  tier         text        not null default '',
+  title        text        not null default '',
+  price        text        default '',
+  image        text        default '',
+  nights       text        default '',
+  hotel        text        default '',
+  rating       numeric     default 4.8,
+  popular      boolean     default false,
+  order_index  integer     default 0,
+  created_at   timestamptz default now()
+);
+
 
 -- ── 2. ROW LEVEL SECURITY (public read / auth write) ───────
 
-alter table hero_slides    enable row level security;
-alter table tour_cards     enable row level security;
-alter table visa_cards     enable row level security;
-alter table visa_countries enable row level security;
-alter table blog_posts     enable row level security;
+alter table hero_slides     enable row level security;
+alter table tour_cards      enable row level security;
+alter table visa_cards      enable row level security;
+alter table visa_countries  enable row level security;
+alter table blog_posts      enable row level security;
+alter table umrah_packages  enable row level security;
 
 drop policy if exists "public_all"  on hero_slides;
 drop policy if exists "public_all"  on tour_cards;
 drop policy if exists "public_all"  on visa_cards;
 drop policy if exists "public_all"  on visa_countries;
 drop policy if exists "public_all"  on blog_posts;
+drop policy if exists "public_all"  on umrah_packages;
 drop policy if exists "public_read" on hero_slides;
 drop policy if exists "public_read" on tour_cards;
 drop policy if exists "public_read" on visa_cards;
 drop policy if exists "public_read" on visa_countries;
 drop policy if exists "public_read" on blog_posts;
+drop policy if exists "public_read" on umrah_packages;
 drop policy if exists "auth_write"  on hero_slides;
 drop policy if exists "auth_write"  on tour_cards;
 drop policy if exists "auth_write"  on visa_cards;
 drop policy if exists "auth_write"  on visa_countries;
 drop policy if exists "auth_write"  on blog_posts;
+drop policy if exists "auth_write"  on umrah_packages;
 
 -- Anyone can read (public website)
-create policy "public_read" on hero_slides    for select using (true);
-create policy "public_read" on tour_cards     for select using (true);
-create policy "public_read" on visa_cards     for select using (true);
-create policy "public_read" on visa_countries for select using (true);
-create policy "public_read" on blog_posts     for select using (true);
+create policy "public_read" on hero_slides     for select using (true);
+create policy "public_read" on tour_cards      for select using (true);
+create policy "public_read" on visa_cards      for select using (true);
+create policy "public_read" on visa_countries  for select using (true);
+create policy "public_read" on blog_posts      for select using (true);
+create policy "public_read" on umrah_packages  for select using (true);
 
 -- Only logged-in admin can insert / update / delete
-create policy "auth_write" on hero_slides    for all using (auth.role() = 'authenticated') with check (auth.role() = 'authenticated');
-create policy "auth_write" on tour_cards     for all using (auth.role() = 'authenticated') with check (auth.role() = 'authenticated');
-create policy "auth_write" on visa_cards     for all using (auth.role() = 'authenticated') with check (auth.role() = 'authenticated');
-create policy "auth_write" on visa_countries for all using (auth.role() = 'authenticated') with check (auth.role() = 'authenticated');
-create policy "auth_write" on blog_posts     for all using (auth.role() = 'authenticated') with check (auth.role() = 'authenticated');
+create policy "auth_write" on hero_slides     for all using (auth.role() = 'authenticated') with check (auth.role() = 'authenticated');
+create policy "auth_write" on tour_cards      for all using (auth.role() = 'authenticated') with check (auth.role() = 'authenticated');
+create policy "auth_write" on visa_cards      for all using (auth.role() = 'authenticated') with check (auth.role() = 'authenticated');
+create policy "auth_write" on visa_countries  for all using (auth.role() = 'authenticated') with check (auth.role() = 'authenticated');
+create policy "auth_write" on blog_posts      for all using (auth.role() = 'authenticated') with check (auth.role() = 'authenticated');
+create policy "auth_write" on umrah_packages  for all using (auth.role() = 'authenticated') with check (auth.role() = 'authenticated');
 
 
 -- ── 3. STORAGE BUCKET ──────────────────────────────────────
@@ -229,6 +249,13 @@ insert into visa_countries (code,name,price,order_index) values
 ('EU','Schengen Area',       '55K',14),
 ('UK','United Kingdom',      '65K',15),
 ('CA','Canada',              '70K',16)
+on conflict do nothing;
+
+insert into umrah_packages (tier,title,price,image,nights,hotel,rating,popular,order_index) values
+('Economy', '15 Days · Considered',  '195,000', '/images/umrah.jpg', '8N Makkah · 5N Madinah',  '3-star, 800m from Haram',            4.6, false, 1),
+('Standard','21 Days · Most chosen', '206,300', '/images/hajj.jpg',  '12N Makkah · 7N Madinah', '4-star, 400m from Haram',            4.8, true,  2),
+('Premium', '21 Days · Pullman view','217,600', '/images/tour1.jpg', '12N Makkah · 7N Madinah', '5-star, 200m from Haram',            4.9, false, 3),
+('Royal',   '21 Days · Haram-facing','295,200', '/images/tour2.jpg', '12N Makkah · 7N Madinah', 'Hilton / Pullman, Haram view',        5.0, false, 4)
 on conflict do nothing;
 
 insert into blog_posts (slug,title,date,category,author,image,excerpt,content) values
