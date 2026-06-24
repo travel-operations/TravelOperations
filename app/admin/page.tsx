@@ -370,7 +370,7 @@ export default function AdminPage() {
               <div>
                 <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-[#143656]/55 mb-1.5">Email</label>
                 <input type="email" value={email} onChange={e => setEmail(e.target.value)}
-                  placeholder="usmancodex.dev@gmail.com" required
+                  placeholder="info@traveloperations.pk" required
                   className="w-full bg-[#f1ece4] text-[#0e1a2b] px-5 py-3.5 rounded-full font-medium placeholder:text-[#143656]/35 outline-none focus:ring-2 focus:ring-[#c7654d]" />
               </div>
               <div>
