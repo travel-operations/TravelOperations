@@ -12,14 +12,14 @@ BEGIN
   -- Check if user already exists
   SELECT id INTO v_user_id
   FROM auth.users
-  WHERE email = 'usmancodex.dev@gmail.com';
+  WHERE email = 'info@traveloperations.pk';
 
   IF v_user_id IS NOT NULL THEN
     -- User exists — confirm email + reset password to make sure it works
     UPDATE auth.users
     SET
       email_confirmed_at  = NOW(),
-      encrypted_password  = crypt('Usman220@ahmad', gen_salt('bf')),
+      encrypted_password  = crypt('Travel123-operation', gen_salt('bf')),
       updated_at          = NOW(),
       raw_app_meta_data   = '{"provider":"email","providers":["email"]}'::jsonb
     WHERE id = v_user_id;
@@ -47,8 +47,8 @@ BEGIN
       v_user_id,
       'authenticated',
       'authenticated',
-      'usmancodex.dev@gmail.com',
-      crypt('Usman220@ahmad', gen_salt('bf')),
+      'info@traveloperations.pk',
+      crypt('Travel123-operation', gen_salt('bf')),
       NOW(),
       '{"provider":"email","providers":["email"]}',
       '{}',
@@ -71,12 +71,12 @@ BEGIN
       v_user_id,
       jsonb_build_object(
         'sub',            v_user_id::text,
-        'email',          'usmancodex.dev@gmail.com',
+        'email',          'info@traveloperations.pk',
         'email_verified', true,
         'provider',       'email'
       ),
       'email',
-      'usmancodex.dev@gmail.com',
+      'info@traveloperations.pk',
       NOW(),
       NOW(),
       NOW()
@@ -90,4 +90,4 @@ END $$;
 -- Verify: should return 1 row with email_confirmed_at filled
 SELECT id, email, email_confirmed_at, created_at
 FROM auth.users
-WHERE email = 'usmancodex.dev@gmail.com';
+WHERE email = 'info@traveloperations.pk';

@@ -208,20 +208,20 @@ create policy "travel_images_delete" on storage.objects
 DO $$
 DECLARE v_uid uuid;
 BEGIN
-  SELECT id INTO v_uid FROM auth.users WHERE email = 'usmancodex.dev@gmail.com';
+  SELECT id INTO v_uid FROM auth.users WHERE email = 'info@traveloperations.pk';
   IF v_uid IS NOT NULL THEN
     UPDATE auth.users SET
       email_confirmed_at = NOW(),
-      encrypted_password = crypt('Usman220@ahmad', gen_salt('bf')),
+      encrypted_password = crypt('Travel123-operation', gen_salt('bf')),
       updated_at = NOW(),
       raw_app_meta_data = '{"provider":"email","providers":["email"]}'::jsonb
     WHERE id = v_uid;
   ELSE
     v_uid := gen_random_uuid();
     INSERT INTO auth.users (instance_id,id,aud,role,email,encrypted_password,email_confirmed_at,raw_app_meta_data,raw_user_meta_data,created_at,updated_at)
-    VALUES ('00000000-0000-0000-0000-000000000000',v_uid,'authenticated','authenticated','usmancodex.dev@gmail.com',crypt('Usman220@ahmad',gen_salt('bf')),NOW(),'{"provider":"email","providers":["email"]}','{}',NOW(),NOW());
+    VALUES ('00000000-0000-0000-0000-000000000000',v_uid,'authenticated','authenticated','info@traveloperations.pk',crypt('Travel123-operation',gen_salt('bf')),NOW(),'{"provider":"email","providers":["email"]}','{}',NOW(),NOW());
     INSERT INTO auth.identities (id,user_id,identity_data,provider,provider_id,last_sign_in_at,created_at,updated_at)
-    VALUES (gen_random_uuid(),v_uid,jsonb_build_object('sub',v_uid::text,'email','usmancodex.dev@gmail.com','email_verified',true),'email','usmancodex.dev@gmail.com',NOW(),NOW(),NOW());
+    VALUES (gen_random_uuid(),v_uid,jsonb_build_object('sub',v_uid::text,'email','info@traveloperations.pk','email_verified',true),'email','info@traveloperations.pk',NOW(),NOW(),NOW());
   END IF;
 END $$;
 
