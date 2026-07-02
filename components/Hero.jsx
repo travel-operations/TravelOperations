@@ -119,15 +119,15 @@ const SearchWidget = () => {
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
-        <Field icon={MapPin} label={activeTab === 'visa' ? 'Destination country' : 'From'} placeholder={activeTab === 'visa' ? 'Dubai (UAE)' : 'Karachi (KHI)'} />
+        <Field icon={MapPin} label={activeTab === 'visa' ? 'Destination country' : 'From'} placeholder={activeTab === 'visa' ? 'Dubai (UAE)' : 'Lahore (LHR)'} />
         {activeTab !== 'visa' && (
-          <Field icon={MapPin} label="To" placeholder="Dubai (DXB)" />
+          <Field icon={MapPin} label="To" placeholder="Country (Any)" />
         )}
         <Field icon={Calendar} label="Departure" type="date" />
         {activeTab !== 'visa' && (
           <Field icon={Calendar} label={activeTab === 'hotels' ? 'Check-out' : 'Return'} type="date" />
         )}
-        <Field icon={Users} label={activeTab === 'hotels' ? 'Guests & rooms' : activeTab === 'visa' ? 'Applicants' : 'Travellers'} placeholder="2 Adults" />
+        <Field icon={Users} label={activeTab === 'hotels' ? 'Guests & rooms' : activeTab === 'visa' ? 'Applicants' : 'Travellers'} placeholder="Adults" />
         {activeTab === 'visa' && (
           <Field icon={FileCheck2} label="Visa type" placeholder="Tourist / Visit" />
         )}

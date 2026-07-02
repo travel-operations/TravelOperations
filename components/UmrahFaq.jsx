@@ -14,11 +14,11 @@ const faqs = [
   },
   {
     q: "What should I budget beyond the package price?",
-    a: "Plan for meals (if not included), ziyarat tips, personal shopping in Makkah and Madinah, and roughly PKR 15,000–25,000 in pocket money per person.",
+    a: "Plan for meals (if not included), ziyara tips, personal shopping in Makkah and Madinah, and roughly PKR 15,000–25,000 in pocket money per person.",
   },
   {
     q: "What's included in a Travel Operations Umrah package?",
-    a: "Umrah e-visa, return airfare, hotel with breakfast, ziyarat transport, airport pickups and a dedicated WhatsApp support line for the whole trip.",
+    a: "Umrah e-visa, return airfare, hotel with breakfast, ziyara transport, airport pickups and a dedicated WhatsApp support line for the whole trip.",
   },
   {
     q: "Is the package refundable if my visa is rejected?",

@@ -60,7 +60,7 @@ const inclusions = [
   { icon: FileCheck2, label: "Umrah e-visa" },
   { icon: Plane,      label: "Return airfare" },
   { icon: Hotel,      label: "Hotel (B&B)" },
-  { icon: Bus,        label: "Ziyarat transport" },
+  { icon: Bus,        label: "Ziyara transport" },
 ];
 
 const UmrahPackages = () => {
@@ -90,7 +90,7 @@ const UmrahPackages = () => {
             </p>
             <h2 className="font-serif text-[44px] md:text-6xl leading-[0.95] text-[#0e1a2b] tracking-tight">
               A sacred journey,<br />
-              <span className="italic text-[#143656]">handled end to end.</span>
+              <span className="italic text-[#143656]">handled start to end.</span>
             </h2>
           </div>
           <div className="md:col-span-6 md:col-start-7 md:pt-4">

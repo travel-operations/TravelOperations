@@ -50,8 +50,8 @@ const CountryGrid = () => {
               Worldwide coverage
             </p>
             <h2 className="font-serif text-[40px] md:text-6xl text-[#0e1a2b] leading-[0.95]">
-              {countries.length} countries we<br />
-              <span className="italic text-[#c7654d]">file visas for.</span>
+              We offers these {countries.length} countries<br />
+              <span className="italic text-[#c7654d]">for visas file.</span>
             </h2>
           </div>
           <div className="md:col-span-4 md:col-start-9 md:pt-2">

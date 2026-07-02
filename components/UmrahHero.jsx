@@ -50,7 +50,7 @@ const UmrahHero = () => {
           transition={{ delay: 0.4 }}
           className="text-base md:text-xl text-white/85 max-w-xl leading-relaxed mt-8"
         >
-          Hotels close to Haram, direct Saudia flights, ziyarat transport and a dedicated mu'allim. Four tiers, transparent pricing, no upsells.
+          Hotels close to Haram, direct Saudia flights, ziyara transport and a dedicated mu'allim. Four tiers, transparent pricing, no upsells.
         </motion.p>
 
         <motion.div

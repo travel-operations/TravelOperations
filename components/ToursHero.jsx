@@ -67,7 +67,7 @@ const ToursHero = () => {
             <MapPin size={16} className="text-[#c7654d]" strokeWidth={2} />
             <div className="flex-1 min-w-0">
               <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#143656]/60">Destination</div>
-              <input className="w-full bg-transparent text-sm font-semibold text-[#0e1a2b] outline-none placeholder:text-[#143656]/40" placeholder="Dubai, Turkey…" />
+              <input className="w-full bg-transparent text-sm font-semibold text-[#0e1a2b] outline-none placeholder:text-[#143656]/40" placeholder="All Countries …" />
             </div>
           </label>
           <label className="flex items-center gap-3 bg-white border border-[#e5dfd4] rounded-xl px-3 py-2.5 cursor-pointer">
@@ -81,7 +81,7 @@ const ToursHero = () => {
             <Users size={16} className="text-[#c7654d]" strokeWidth={2} />
             <div className="flex-1 min-w-0">
               <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#143656]/60">Travellers</div>
-              <input className="w-full bg-transparent text-sm font-semibold text-[#0e1a2b] outline-none placeholder:text-[#143656]/40" placeholder="2 adults" />
+              <input className="w-full bg-transparent text-sm font-semibold text-[#0e1a2b] outline-none placeholder:text-[#143656]/40" placeholder="adults" />
             </div>
           </label>
           <button

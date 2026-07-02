@@ -40,7 +40,7 @@ const WhyChooseUs = () => {
           <div className="md:col-span-4">
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#c7654d] mb-4">
               <span className="inline-block w-8 h-px bg-[#c7654d] align-middle mr-3"></span>
-              Why us
+              Why choose us
             </p>
             <h2 className="font-serif text-4xl md:text-5xl text-[#0e1a2b] leading-[0.95]">
               Six reasons<br />

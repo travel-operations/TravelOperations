@@ -335,5 +335,5 @@ insert into blog_posts (slug,title,date,category,author,image,excerpt,content) v
  'Umrah Package from Lahore with Travel Air',
  '28 JUN','Umrah','Travel Air','/images/umrah.jpg',
  'Starting on the spiritual journey of Umrah is a significant milestone for many Muslims.',
- 'Lahore provides excellent connectivity for pilgrims with direct flights to Jeddah and Madinah. Our packages include premium lounge access and full Ziyarat transport included.')
+ 'Lahore provides excellent connectivity for pilgrims with direct flights to Jeddah and Madinah. Our packages include premium lounge access and full Ziyara transport included.')
 on conflict (slug) do nothing;

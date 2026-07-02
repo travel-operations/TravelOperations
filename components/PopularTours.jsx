@@ -140,6 +140,7 @@ const PopularTours = () => {
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#c7654d] mb-4">
               <span className="inline-block w-8 h-px bg-[#c7654d] align-middle mr-3"></span>
               Hand-picked journeys
+              
             </p>
             <h2 className="font-serif text-[44px] md:text-7xl leading-[0.95] text-[#0e1a2b] tracking-tight">
               Special offers, <span className="italic text-[#c7654d]">carefully composed.</span>
