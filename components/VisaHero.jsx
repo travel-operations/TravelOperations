@@ -65,7 +65,7 @@ const VisaHero = () => {
           initial={{ opacity: 0, scale: 0.92 }} animate={{ opacity: 1, scale: 1 }}
           className="lg:col-span-5 relative"
         >
-          <img src="/images/tour1.jpg" alt="Visa Consultant" className="rounded-2xl shadow-2xl w-full object-cover h-[420px] md:h-[560px]" />
+          <img src="/images/International Travelers.jpg" alt="Visa Consultant" className="rounded-2xl shadow-2xl w-full object-cover h-[420px] md:h-[560px]" />
 
           <div className="hidden md:flex absolute -bottom-6 -left-6 bg-[#fbf9f6] rounded-2xl shadow-xl p-4 items-center gap-3 border border-[#e5dfd4]">
             <BadgeCheck size={24} className="text-[#c7654d]" strokeWidth={2} />
