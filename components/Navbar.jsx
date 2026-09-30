@@ -19,9 +19,10 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', href: '/' },
+     { name: 'Visa', href: '/visa' },
     { name: 'Tours', href: '/tours' },
     { name: 'Umrah', href: '/umrah-packages' },
-    { name: 'Visa', href: '/visa' },
+   
     { name: 'Destinations', href: '/destination' },
     { name: 'Blog', href: '/blog' },
   ];
