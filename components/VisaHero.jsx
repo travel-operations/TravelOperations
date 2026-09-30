@@ -24,9 +24,9 @@ const VisaHero = () => {
             Visa consultancy · Pakistan
           </p>
           <h1 className="display-xl text-[#0e1a2b] mb-6">
-            Embassy-grade<br />
-            paperwork,<br />
-            <span className="italic text-[#c7654d]">handled for you.</span>
+            Your journey to <br />
+            Muslim countries,<br />
+            <span className="italic text-[#c7654d]">starts with the right visa.</span>
           </h1>
           <p className="text-[#143656]/80 text-base md:text-lg leading-relaxed mb-9 max-w-2xl">
             We handle eligibility checks, documentation, application drafting, embassy appointments and interview coaching — for Schengen, UK, USA, Canada, UAE, Malaysia, Turkey and 60+ other countries.
