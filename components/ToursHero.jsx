@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Calendar, Users, Search } from 'lucide-react';
 
 const toursSlides = [
-  { id: 1, image: "/images/tour1.jpg", eyebrow: "Tour catalogue · 2026", title: "Global adventures,", accent: "carefully composed." },
+  { id: 1, image: "/images/tour1.jpg", eyebrow: "Cultural Escapes · 2026", title: "Discover the Heart of Uzbekistan", accent: "Explore historic landmarks, beautiful architecture and the rich cultural heritage of Uzbekistan." },
   { id: 2, image: "/images/tour2.jpg", eyebrow: "Hand-crafted itineraries", title: "Unforgettable", accent: "trips, only." },
   { id: 3, image: "/images/tour3.jpg", eyebrow: "Pakistan to the world", title: "Discover", accent: "new horizons." },
 ];
