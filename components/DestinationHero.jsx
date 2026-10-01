@@ -4,8 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const slides = [
   { id: 1, image: "/images/Destinations.jpg", eyebrow: "Destinations", title: "Explore the world,", accent: "slowly." },
-  { id: 2, image: "/images/Field notes.jpg", eyebrow: "Field notes", title: "Adventure awaits", accent: "every corner." },
-  { id: 3, image: "/images/Curated trips.jpg", eyebrow: "Curated trips", title: "Memories,", accent: "engineered." },
+  { id: 2, image: "/images/Field-notes.jpg", eyebrow: "Field notes", title: "Adventure awaits", accent: "every corner." },
+  { id: 3, image: "/images/Curated-trips.jpg", eyebrow: "Curated trips", title: "Memories,", accent: "engineered." },
 ];
 
 const DestinationHero = () => {
