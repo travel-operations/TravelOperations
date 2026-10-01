@@ -37,7 +37,7 @@ export default function BlogPage() {
   return (
     <main className="bg-[#fbf9f6] min-h-screen">
       <section className="relative min-h-[55vh] flex items-end pt-32 pb-16 bg-[#0e1a2b]">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/tour2.jpg')" }}>
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/travel-blog.jpg')" }}>
           <div className="absolute inset-0 bg-gradient-to-t from-[#0e1a2b] via-[#0e1a2b]/55 to-[#0e1a2b]/30"></div>
         </div>
         <div className="container mx-auto px-6 md:px-10 relative z-10 text-white">
