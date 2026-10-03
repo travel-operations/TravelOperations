@@ -1,9 +1,12 @@
 "use client";
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { Plane, Hotel, Bus, FileCheck2, Star, Calendar, BadgeCheck, ArrowUpRight, ShieldCheck, Phone } from 'lucide-react';
+import { Hotel, FileCheck2, Star, Calendar, BadgeCheck, ArrowUpRight, ShieldCheck, Phone } from 'lucide-react';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
+
+// Home page par zyada se zyada kitne cards (4 per row x 2 rows)
+const HOME_LIMIT = 8;
 
 const staticPackages = [
   {
@@ -56,26 +59,27 @@ const staticPackages = [
   },
 ];
 
-const inclusions = [
-  { icon: FileCheck2, label: "Umrah e-visa" },
-  { icon: Plane,      label: "Return airfare" },
-  { icon: Hotel,      label: "Hotel (B&B)" },
-  { icon: Bus,        label: "Ziyara transport" },
-];
-
-const UmrahPackages = () => {
-  const [packages, setPackages] = useState(staticPackages);
+const UmrahPackages = ({ featured = false }) => {
+  const [packages, setPackages] = useState(
+    featured ? staticPackages.filter((p) => p.popular).slice(0, HOME_LIMIT) : staticPackages
+  );
 
   const fetchPackages = useCallback(() => {
     if (!supabase) return;
-    supabase
+
+    let query = supabase
       .from('umrah_packages')
       .select('*')
-      .order('order_index', { ascending: true })
-      .then(({ data }) => {
-        if (data && data.length > 0) setPackages(data);
-      });
-  }, []);
+      .order('order_index', { ascending: true });
+
+    if (featured) {
+      query = query.eq('popular', true).limit(HOME_LIMIT);
+    }
+
+    query.then(({ data }) => {
+      if (data && data.length > 0) setPackages(data);
+    });
+  }, [featured]);
 
   useEffect(() => { fetchPackages(); }, [fetchPackages]);
 
@@ -112,80 +116,87 @@ const UmrahPackages = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {packages.map((pkg, i) => (
-           <motion.article
-              key={pkg.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className={`bg-white rounded-2xl overflow-hidden border ${pkg.popular ? 'border-[#c7654d] shadow-[0_20px_60px_-30px_rgba(199,101,77,0.6)]' : 'border-[#e5dfd4]'} flex flex-col group`}
-            >
-              <div className="relative aspect-[4/3] shrink-0 overflow-hidden">
-                <img
-                  src={pkg.image}
-                  alt={pkg.title}
-                  className="h-full w-full object-cover"
-                />
+          {packages.map((pkg, i) => {
+            // Home page par sab cards popular hain, is liye wahan highlight/badge nahi dikhate
+            const highlight = pkg.popular;
 
-                {pkg.popular && (
-                  <span className="absolute top-4 right-4 bg-[#c7654d] text-white text-[10px] font-bold tracking-[0.2em] uppercase px-2.5 py-1 rounded-sm">
-                    Most chosen
-                  </span>
-                )}
-              </div>
+            return (
+              <motion.article
+                key={pkg.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className={`bg-white rounded-2xl overflow-hidden border ${highlight ? 'border-[#c7654d] shadow-[0_20px_60px_-30px_rgba(199,101,77,0.6)]' : 'border-[#e5dfd4]'} flex flex-col group`}
+              >
+                <div className="relative aspect-[4/3] shrink-0 overflow-hidden">
+                  <img
+                    src={pkg.image}
+                    alt={pkg.title}
+                    className="h-full w-full object-cover"
+                  />
 
-              <div className="p-6 flex flex-col grow">
-                <div className="mb-5">
-                  <span className="font-serif italic text-[#c7654d] text-sm">{pkg.tier}</span>
-                  <h3 className="font-semibold text-lg leading-tight text-[#0e1a2b]">{pkg.title}</h3>
+                  {highlight && (
+                    <span className="absolute top-4 right-4 bg-[#c7654d] text-white text-[10px] font-bold tracking-[0.2em] uppercase px-2.5 py-1 rounded-sm">
+                      Most chosen
+                    </span>
+                  )}
                 </div>
 
-                <div className="space-y-2.5 text-[12px] text-[#143656]/80 mb-5">
-                  <div className="flex items-center gap-2">
-                    <Calendar size={14} className="text-[#c7654d] shrink-0" strokeWidth={2} /> {pkg.nights}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Hotel size={14} className="text-[#c7654d] shrink-0" strokeWidth={2} /> {pkg.hotel}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Star size={14} className="text-[#c7654d] shrink-0" fill="currentColor" /> {pkg.rating} guest rating
-                  </div>
-                </div>
-
-                <div className="mt-auto border-t border-[#f1ece4] pt-5">
-                  <div className="text-[10px] uppercase tracking-[0.2em] text-[#143656]/50 font-semibold mb-1">Per person from</div>
-                  <div className="flex items-baseline gap-1.5 mb-5">
-                    <span className="font-serif text-3xl text-[#0e1a2b] leading-none">PKR</span>
-                    <span className="font-serif text-3xl text-[#c7654d] leading-none">{pkg.price}</span>
+                <div className="p-6 flex flex-col grow">
+                  <div className="mb-5">
+                    <span className="font-serif italic text-[#c7654d] text-sm">{pkg.tier}</span>
+                    <h3 className="font-semibold text-lg leading-tight text-[#0e1a2b]">{pkg.title}</h3>
                   </div>
 
-                  <Link href="/book-now">
-                    <button
-                      type="button"
-                      className="w-full bg-[#0e1a2b] text-white py-3 rounded-full font-semibold text-xs hover:bg-[#c7654d] transition-colors flex items-center justify-center gap-2"
-                    >
-                      Reserve seat
-                      <ArrowUpRight size={14} strokeWidth={2.5} />
-                    </button>
-                  </Link>
+                  <div className="space-y-2.5 text-[12px] text-[#143656]/80 mb-5">
+                    <div className="flex items-center gap-2">
+                      <Calendar size={14} className="text-[#c7654d] shrink-0" strokeWidth={2} /> {pkg.nights}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Hotel size={14} className="text-[#c7654d] shrink-0" strokeWidth={2} /> {pkg.hotel}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Star size={14} className="text-[#c7654d] shrink-0" fill="currentColor" /> {pkg.rating} guest rating
+                    </div>
+                  </div>
+
+                  <div className="mt-auto border-t border-[#f1ece4] pt-5">
+                    <div className="text-[10px] uppercase tracking-[0.2em] text-[#143656]/50 font-semibold mb-1">Per person from</div>
+                    <div className="flex items-baseline gap-1.5 mb-5">
+                      <span className="font-serif text-3xl text-[#0e1a2b] leading-none">PKR</span>
+                      <span className="font-serif text-3xl text-[#c7654d] leading-none">{pkg.price}</span>
+                    </div>
+
+                    <Link href="/book-now">
+                      <button
+                        type="button"
+                        className="w-full bg-[#0e1a2b] text-white py-3 rounded-full font-semibold text-xs hover:bg-[#c7654d] transition-colors flex items-center justify-center gap-2"
+                      >
+                        Reserve seat
+                        <ArrowUpRight size={14} strokeWidth={2.5} />
+                      </button>
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            </motion.article>
-          ))}
+              </motion.article>
+            );
+          })}
         </div>
 
-        <div className="text-center mt-16">
-          <Link href="/umrah-packages">
-            <button
-              type="button"
-              className="inline-flex items-center gap-2 bg-transparent border border-[#0e1a2b] text-[#0e1a2b] px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-[#0e1a2b] hover:text-white transition-colors"
-            >
-              <FileCheck2 size={16} strokeWidth={2} />
-              View all Umrah packages
-            </button>
-          </Link>
-        </div>
+        {featured && (
+          <div className="text-center mt-16">
+            <Link href="/umrah-packages">
+              <button
+                type="button"
+                className="inline-flex items-center gap-2 bg-transparent border border-[#0e1a2b] text-[#0e1a2b] px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-[#0e1a2b] hover:text-white transition-colors"
+              >
+                <FileCheck2 size={16} strokeWidth={2} />
+                View all Umrah packages
+              </button>
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );
