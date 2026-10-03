@@ -5,7 +5,7 @@ import { Hotel, FileCheck2, Star, Calendar, BadgeCheck, ArrowUpRight, ShieldChec
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 
-// Home page par zyada se zyada kitne cards (4 per row x 2 rows)
+
 const HOME_LIMIT = 8;
 
 const staticPackages = [
