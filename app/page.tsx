@@ -13,7 +13,7 @@ export default function Home() {
     <main>
       <Hero />
       <PopularTours />
-      <UmrahPackages />
+      <UmrahPackages featured />
       <VisaConsultancy />
       <CustomerHelp />
       <PartnersMarquee />
