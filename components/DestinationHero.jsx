@@ -1,0 +1,82 @@
+"use client";
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const slides = [
+  { id: 1, image: "/images/Destinations.jpg", eyebrow: "Destinations", title: "Explore the world,", accent: "slowly." },
+  { id: 2, image: "/images/Field-notes.jpg", eyebrow: "Field notes", title: "Adventure awaits", accent: "every corner." },
+  { id: 3, image: "/images/Curated-trips.jpg", eyebrow: "Curated trips", title: "Memories,", accent: "engineered." },
+];
+
+const DestinationHero = () => {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    }, 7000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <section className="relative min-h-[85vh] w-full overflow-hidden bg-[#0e1a2b] pt-28">
+      <AnimatePresence mode="wait">
+        <motion.div key={current} className="absolute inset-0">
+          <motion.div
+            initial={{ scale: 1.12 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 8, ease: "linear" }}
+            className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${slides[current].image})` }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0e1a2b]/55 via-[#0e1a2b]/35 to-[#0e1a2b]/85"></div>
+        </motion.div>
+      </AnimatePresence>
+
+      <div className="relative z-10 container mx-auto px-6 md:px-12 pt-16 md:pt-24 pb-20 text-white">
+        <AnimatePresence mode="wait">
+          <motion.div key={current} className="max-w-4xl">
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#F3592D] mb-6"
+            >
+              <span className="inline-block w-8 h-px bg-[#F3592D] align-middle mr-3"></span>
+              {slides[current].eyebrow}
+            </motion.p>
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="display-hero text-white"
+            >
+              {slides[current].title}
+              <span className="block italic text-[#F3592D]">{slides[current].accent}</span>
+            </motion.h1>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      <div className="absolute bottom-6 left-6 md:left-12 z-20 flex items-center gap-4">
+        <span className="font-serif italic text-white/60 text-sm">
+          {String(current + 1).padStart(2, '0')}<span className="mx-1.5">/</span>{String(slides.length).padStart(2, '0')}
+        </span>
+        <div className="flex gap-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              type="button"
+              onClick={() => setCurrent(index)}
+              aria-label={`Slide ${index + 1}`}
+              className={`h-[2px] transition-all duration-500 ${
+                current === index ? "w-12 bg-[#F3592D]" : "w-6 bg-white/30 hover:bg-white/60"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default DestinationHero;

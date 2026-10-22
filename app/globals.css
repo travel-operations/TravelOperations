@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fbf9f6;
+  --foreground: #0e1a2b;
+  --brand-deep: #0e1a2b;
+  --brand-blue: #143656;
+  --brand-coral: #F3592D;
+  --brand-orange: #F3592D;
+  --brand-coral-soft: #e7a892;
+  --brand-cream: #fbf9f6;
+  --brand-sand: #f1ece4;
+  --brand-ink: #1c1c1c;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-orange: #F3592D;
+  --color-brand-coral: var(--brand-coral);
+  --font-sans: var(--font-sans, "Manrope", ui-sans-serif, system-ui);
+  --font-serif: var(--font-serif, "Instrument Serif", Georgia, serif);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans, "Manrope", ui-sans-serif, system-ui);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "cv11";
+}
+
+.font-serif {
+  font-family: var(--font-serif, "Instrument Serif", Georgia, serif);
+  letter-spacing: -0.01em;
+}
+
+.font-sans {
+  font-family: var(--font-sans, "Manrope", ui-sans-serif, system-ui);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--brand-sand);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--brand-deep);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-coral);
+}
+
+::selection {
+  background: var(--brand-coral);
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn { animation: fadeIn 0.4s ease-out; }
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-floatY { animation: floatY 6s ease-in-out infinite; }
+
+/* Editorial grain texture for warmth */
+.grain {
+  position: relative;
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* Subtle warm paper background */
+.bg-paper {
+  background-color: var(--brand-cream);
+  background-image:
+    radial-gradient(at 20% 10%, rgba(243,89,45,0.06) 0px, transparent 50%),
+    radial-gradient(at 80% 80%, rgba(20,54,86,0.05) 0px, transparent 50%);
+}
+
+.bg-sand { background-color: var(--brand-sand); }
+.bg-deep { background-color: var(--brand-deep); }
+
+/* Vertical thin rule used as editorial accent */
+.rule-v {
+  display: inline-block;
+  width: 1px;
+  background: currentColor;
+  opacity: 0.4;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(20%);
+  cursor: pointer;
+}
+
+/* Decorative editorial number */
+.editorial-num {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.85;
+  letter-spacing: -0.03em;
+}
+
+/* Fluid, fully-responsive display headings — scale smoothly with viewport */
+.display-hero {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 9vw, 8rem);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+}
+.display-xl {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6.5vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+.display-lg {
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: -0.015em;
+}
+
+/* Reveal-on-scroll helper (paired with IntersectionObserver-free CSS) */
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.rise-in { animation: riseIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

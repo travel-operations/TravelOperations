@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(grep -rn \"\\\\\\\\\\\\$[0-9]\\\\|price: \\\\\"[0-9]\" components/ app/)",
+      "Bash(grep -rn \"\\\\\\\\\\\\$[0-9]\\\\|USD\\\\| usd \" components/ app/)",
+      "Bash(sleep 5 && cat /tmp/travel-dev.log)"
+    ]
+  }
+}
