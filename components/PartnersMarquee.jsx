@@ -26,12 +26,12 @@ const PartnersMarquee = () => {
       <div className="container mx-auto px-6 md:px-10 mb-10 md:mb-14">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#F3592D] mb-3">
-              <span className="inline-block w-8 h-px bg-[#F3592D] align-middle mr-3"></span>
+            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#EF5B2D] mb-3">
+              <span className="inline-block w-8 h-px bg-[#EF5B2D] align-middle mr-3"></span>
               Trusted by
             </p>
             <h2 className="font-serif text-3xl md:text-5xl text-[#0e1a2b] leading-tight">
-              Our airline <span className="italic text-[#F3592D]">partners.</span>
+              Our airline <span className="italic text-[#EF5B2D]">partners.</span>
             </h2>
           </div>
           <p className="font-sans text-[#143656]/70 text-sm md:text-base max-w-sm md:text-right">

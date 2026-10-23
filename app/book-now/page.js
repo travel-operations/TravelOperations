@@ -45,7 +45,7 @@ export default function BookNow() {
   };
 
   const inputCls =
-    "w-full px-4 py-3.5 border border-[#e5dfd4] rounded-xl bg-white focus:border-[#F3592D] focus:ring-2 focus:ring-[#F3592D]/20 outline-none transition-all font-medium text-[#0e1a2b] placeholder:text-[#143656]/40";
+    "w-full px-4 py-3.5 border border-[#e5dfd4] rounded-xl bg-white focus:border-[#EF5B2D] focus:ring-2 focus:ring-[#EF5B2D]/20 outline-none transition-all font-medium text-[#0e1a2b] placeholder:text-[#143656]/40";
   const labelCls =
     "text-[11px] font-semibold uppercase tracking-[0.18em] text-[#143656]/70 mb-1.5 ml-0.5";
 
@@ -57,12 +57,12 @@ export default function BookNow() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-10 md:mb-14"
         >
-          <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#F3592D] mb-4">
-            <span className="inline-block w-8 h-px bg-[#F3592D] align-middle mr-3"></span>
+          <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#EF5B2D] mb-4">
+            <span className="inline-block w-8 h-px bg-[#EF5B2D] align-middle mr-3"></span>
             Reserve your trip
           </p>
           <h1 className="font-serif text-[44px] md:text-7xl text-[#0e1a2b] leading-[0.95] tracking-tight">
-            Booking <span className="italic text-[#F3592D]">desk.</span>
+            Booking <span className="italic text-[#EF5B2D]">desk.</span>
           </h1>
           <p className="text-[#143656]/80 text-base md:text-lg leading-relaxed mt-5 max-w-2xl">
             Fill in the details below and our team will confirm availability and pricing within hours. Every enquiry reaches us at <span className="font-semibold text-[#0e1a2b]">{CONTACT_EMAIL}</span>.
@@ -75,7 +75,7 @@ export default function BookNow() {
             animate={{ opacity: 1, scale: 1 }}
             className="bg-white border border-[#e5dfd4] rounded-3xl p-10 md:p-16 text-center shadow-[0_30px_80px_-40px_rgba(14,26,43,0.4)]"
           >
-            <div className="w-16 h-16 rounded-full bg-[#F3592D] text-white flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 rounded-full bg-[#EF5B2D] text-white flex items-center justify-center mx-auto mb-6">
               <Check size={30} strokeWidth={3} />
             </div>
             <h2 className="font-serif text-3xl md:text-5xl text-[#0e1a2b] mb-4">Request received.</h2>
@@ -85,7 +85,7 @@ export default function BookNow() {
             <button
               type="button"
               onClick={() => setStatus('idle')}
-              className="inline-flex items-center gap-2 bg-[#0e1a2b] text-white px-6 py-3.5 rounded-full font-semibold text-sm hover:bg-[#F3592D] transition-colors"
+              className="inline-flex items-center gap-2 bg-[#0e1a2b] text-white px-6 py-3.5 rounded-full font-semibold text-sm hover:bg-[#EF5B2D] transition-colors"
             >
               Make another booking <ArrowUpRight size={15} strokeWidth={2.5} />
             </button>
@@ -99,7 +99,7 @@ export default function BookNow() {
             className="bg-white p-5 md:p-10 rounded-3xl shadow-[0_30px_80px_-40px_rgba(14,26,43,0.4)] border border-[#e5dfd4] grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5"
           >
             <div className="md:col-span-2 bg-[#fbf9f6] p-5 md:p-6 rounded-2xl border border-[#e5dfd4]">
-              <label className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#F3592D] mb-2">
+              <label className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#EF5B2D] mb-2">
                 <Plane size={14} strokeWidth={2} /> Select your package
               </label>
               <div className="relative">
@@ -133,7 +133,7 @@ export default function BookNow() {
                     <option value="Visa Consultancy">Visa Consultancy</option>
                   </optgroup>
                 </select>
-                <ChevronDown size={24} strokeWidth={2.5} className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-[#F3592D]" />
+                <ChevronDown size={24} strokeWidth={2.5} className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-[#EF5B2D]" />
               </div>
             </div>
 
@@ -178,19 +178,19 @@ export default function BookNow() {
             </div>
 
             {status === 'error' && (
-              <p className="md:col-span-2 text-[#F3592D] text-sm font-semibold">
+              <p className="md:col-span-2 text-[#EF5B2D] text-sm font-semibold">
                 Something went wrong. Please call us at +92 311 1240111 or email {CONTACT_EMAIL}.
               </p>
             )}
 
             <div className="md:col-span-2 flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
               <span className="flex items-center gap-2 text-[12px] font-medium text-[#143656]/70">
-                <ShieldCheck size={15} className="text-[#F3592D]" strokeWidth={2} /> Your details are kept private &amp; secure.
+                <ShieldCheck size={15} className="text-[#EF5B2D]" strokeWidth={2} /> Your details are kept private &amp; secure.
               </span>
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className="w-full sm:w-auto bg-[#0e1a2b] text-white px-8 py-4 rounded-full font-semibold text-sm hover:bg-[#F3592D] transition-colors inline-flex items-center justify-center gap-2 disabled:opacity-60"
+                className="w-full sm:w-auto bg-[#0e1a2b] text-white px-8 py-4 rounded-full font-semibold text-sm hover:bg-[#EF5B2D] transition-colors inline-flex items-center justify-center gap-2 disabled:opacity-60"
               >
                 {status === 'sending' ? (
                   <><Loader2 size={16} className="animate-spin" /> Sending…</>

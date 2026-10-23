@@ -70,7 +70,7 @@ const Loader = () => {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.7, ease: "easeInOut" } }}
         >
-          <div className="absolute -top-40 -right-32 w-[600px] h-[600px] rounded-full bg-[#F3592D]/25 blur-[120px]" />
+          <div className="absolute -top-40 -right-32 w-[600px] h-[600px] rounded-full bg-[#EF5B2D]/25 blur-[120px]" />
           <div className="absolute -bottom-48 -left-40 w-[600px] h-[600px] rounded-full bg-[#143656]/50 blur-[120px]" />
 
           {[...Array(28)].map((_, i) => (
@@ -98,7 +98,7 @@ const Loader = () => {
                     key={i}
                     d={d}
                     fill="none"
-                    stroke={i % 2 === 0 ? "#e7a892" : "#F3592D"}
+                    stroke={i % 2 === 0 ? "#EF5B2D" : "#EF5B2D"}
                     strokeWidth="1.5"
                     strokeDasharray="5 6"
                     initial={{ pathLength: 0, opacity: 0 }}
@@ -121,21 +121,21 @@ const Loader = () => {
                   <g key={i}>
                     <motion.circle
                       cx={dest.cx} cy={dest.cy} r="5"
-                      fill={i % 2 === 0 ? "#e7a892" : "#F3592D"}
+                      fill={i % 2 === 0 ? "#EF5B2D" : "#EF5B2D"}
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       transition={{ delay: ANIM_MS / 1000 - 0.1 + i * 0.06 }}
                     />
                     <motion.circle
                       cx={dest.cx} cy={dest.cy} r="5" fill="none"
-                      stroke={i % 2 === 0 ? "#e7a892" : "#F3592D"} strokeWidth="1.2"
+                      stroke={i % 2 === 0 ? "#EF5B2D" : "#EF5B2D"} strokeWidth="1.2"
                       initial={{ opacity: 0 }}
                       animate={{ r: [5, 14], opacity: [0.7, 0] }}
                       transition={{ duration: 1.6, repeat: Infinity, delay: ANIM_MS / 1000 + i * 0.06 }}
                     />
                     <motion.text
                       x={dest.cx + 11} y={dest.cy + 4}
-                      fill={landed ? "#e7a892" : "rgba(231,168,146,0.75)"}
+                      fill={landed ? "#EF5B2D" : "rgba(239,91,45,0.75)"}
                       fontSize="8.5" fontWeight="700" letterSpacing="0.8"
                       fontFamily="serif" fontStyle="italic"
                       initial={{ opacity: 0 }}
@@ -179,7 +179,7 @@ const Loader = () => {
               transition={{ delay: 0.45, duration: 0.8 }}
               className="font-serif text-white text-4xl md:text-6xl tracking-tight text-center leading-none"
             >
-              Travel <span className="italic text-[#e7a892]">Operations</span>
+              Travel <span className="italic text-[#EF5B2D]">Operations</span>
             </motion.h1>
 
             <AnimatePresence mode="wait">
@@ -189,7 +189,7 @@ const Loader = () => {
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="text-[#e7a892] text-[11px] uppercase tracking-[0.45em] mt-4 mb-8 text-center font-semibold"
+                  className="text-[#EF5B2D] text-[11px] uppercase tracking-[0.45em] mt-4 mb-8 text-center font-semibold"
                 >
                   ✈ All destinations reached
                 </motion.p>
@@ -209,7 +209,7 @@ const Loader = () => {
             <div className="w-56 md:w-72">
               <div className="h-[3px] w-full bg-white/10 rounded-full overflow-hidden">
                 <motion.div
-                  className="h-full bg-gradient-to-r from-[#e7a892] to-[#F3592D] rounded-full"
+                  className="h-full bg-gradient-to-r from-[#EF5B2D] to-[#EF5B2D] rounded-full"
                   style={{ width: `${progress}%` }}
                 />
               </div>
@@ -217,7 +217,7 @@ const Loader = () => {
                 <span className="text-white/40 text-[10px] uppercase tracking-[0.3em]">
                   {landed ? 'Landed' : 'Boarding'}
                 </span>
-                <span className="text-[#e7a892] text-[10px] font-semibold tabular-nums">{progress}%</span>
+                <span className="text-[#EF5B2D] text-[10px] font-semibold tabular-nums">{progress}%</span>
               </div>
             </div>
           </div>

@@ -45,13 +45,13 @@ const CountryGrid = () => {
       <div className="container mx-auto px-6 md:px-10">
         <div className="grid md:grid-cols-12 gap-8 mb-14">
           <div className="md:col-span-7">
-            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#F3592D] mb-4">
-              <span className="inline-block w-8 h-px bg-[#F3592D] align-middle mr-3"></span>
+            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#EF5B2D] mb-4">
+              <span className="inline-block w-8 h-px bg-[#EF5B2D] align-middle mr-3"></span>
               Worldwide coverage
             </p>
             <h2 className="font-serif text-[40px] md:text-6xl text-[#0e1a2b] leading-[0.95]">
               We offers these {countries.length} countries<br />
-              <span className="italic text-[#F3592D]">for visas file.</span>
+              <span className="italic text-[#EF5B2D]">for visas file.</span>
             </h2>
           </div>
           <div className="md:col-span-4 md:col-start-9 md:pt-2">
@@ -71,12 +71,12 @@ const CountryGrid = () => {
               transition={{ delay: i * 0.03 }}
             >
               <Link href="/book-now">
-                <div className="bg-white p-5 rounded-2xl border border-[#e5dfd4] hover:border-[#F3592D] hover:bg-[#0e1a2b] transition-colors duration-300 group cursor-pointer h-full">
+                <div className="bg-white p-5 rounded-2xl border border-[#e5dfd4] hover:border-[#EF5B2D] hover:bg-[#0e1a2b] transition-colors duration-300 group cursor-pointer h-full">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#0e1a2b] group-hover:text-[#e7a892] transition-colors">
+                    <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#0e1a2b] group-hover:text-[#EF5B2D] transition-colors">
                       {c.code}
                     </span>
-                    <ArrowUpRight size={14} strokeWidth={2} className="text-[#143656]/30 group-hover:text-[#e7a892] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                    <ArrowUpRight size={14} strokeWidth={2} className="text-[#143656]/30 group-hover:text-[#EF5B2D] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                   </div>
                   <div className="font-serif text-xl text-[#0e1a2b] group-hover:text-white leading-tight mb-1 transition-colors">
                     {c.name}

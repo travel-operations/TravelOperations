@@ -159,7 +159,7 @@ export default function AdminAddCard({ section, onSuccess, className = '' }) {
 
       <button
         onClick={() => setShowForm(true)}
-        className={`inline-flex items-center gap-2 bg-[#F3592D] text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-[#0e1a2b] transition-colors shadow-md ${className}`}
+        className={`inline-flex items-center gap-2 bg-[#EF5B2D] text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-[#0e1a2b] transition-colors shadow-md ${className}`}
       >
         <Plus size={16} strokeWidth={2.5} />
         Add {config.label}
@@ -184,13 +184,13 @@ export default function AdminAddCard({ section, onSuccess, className = '' }) {
               {config.fields.map((f) => (
                 <div key={f.key}>
                   <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-[#143656]/60 mb-2">
-                    {f.label} {f.required && <span className="text-[#F3592D]">*</span>}
+                    {f.label} {f.required && <span className="text-[#EF5B2D]">*</span>}
                   </label>
 
                   {f.type === 'checkbox' ? (
                     <label className="flex items-center gap-3 cursor-pointer">
                       <div
-                        className={`w-11 h-6 rounded-full transition-colors relative ${formData[f.key] ? 'bg-[#F3592D]' : 'bg-[#e5dfd4]'}`}
+                        className={`w-11 h-6 rounded-full transition-colors relative ${formData[f.key] ? 'bg-[#EF5B2D]' : 'bg-[#e5dfd4]'}`}
                         onClick={() => handleFieldChange(f.key, !formData[f.key])}
                       >
                         <div className={`absolute top-1 w-4 h-4 rounded-full bg-white shadow transition-all ${formData[f.key] ? 'left-6' : 'left-1'}`} />
@@ -205,10 +205,10 @@ export default function AdminAddCard({ section, onSuccess, className = '' }) {
                         value={formData[f.key] || ''}
                         onChange={(e) => handleFieldChange(f.key, e.target.value)}
                         placeholder="Paste image URL or upload below"
-                        className="w-full bg-[#f1ece4] text-[#0e1a2b] px-4 py-3 rounded-xl font-medium text-sm placeholder:text-[#143656]/40 outline-none focus:ring-2 focus:ring-[#F3592D]"
+                        className="w-full bg-[#f1ece4] text-[#0e1a2b] px-4 py-3 rounded-xl font-medium text-sm placeholder:text-[#143656]/40 outline-none focus:ring-2 focus:ring-[#EF5B2D]"
                       />
                       <div className="flex items-center gap-3 flex-wrap">
-                        <label className={`cursor-pointer flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-colors ${uploading ? 'bg-[#f1ece4] text-[#143656]/50' : 'bg-[#0e1a2b] text-white hover:bg-[#F3592D]'}`}>
+                        <label className={`cursor-pointer flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-colors ${uploading ? 'bg-[#f1ece4] text-[#143656]/50' : 'bg-[#0e1a2b] text-white hover:bg-[#EF5B2D]'}`}>
                           {uploading ? (
                             <><div className="w-3.5 h-3.5 border-2 border-current border-t-transparent rounded-full animate-spin" /> Uploading...</>
                           ) : (
@@ -235,14 +235,14 @@ export default function AdminAddCard({ section, onSuccess, className = '' }) {
                       rows={4}
                       value={formData[f.key] || ''}
                       onChange={(e) => handleFieldChange(f.key, e.target.value)}
-                      className="w-full bg-[#f1ece4] text-[#0e1a2b] px-4 py-3 rounded-xl font-medium text-sm outline-none focus:ring-2 focus:ring-[#F3592D] resize-none"
+                      className="w-full bg-[#f1ece4] text-[#0e1a2b] px-4 py-3 rounded-xl font-medium text-sm outline-none focus:ring-2 focus:ring-[#EF5B2D] resize-none"
                     />
                   ) : (
                     <input
                       type={f.type}
                       value={formData[f.key] ?? ''}
                       onChange={(e) => handleFieldChange(f.key, f.type === 'number' ? Number(e.target.value) : e.target.value)}
-                      className="w-full bg-[#f1ece4] text-[#0e1a2b] px-4 py-3 rounded-xl font-medium text-sm outline-none focus:ring-2 focus:ring-[#F3592D]"
+                      className="w-full bg-[#f1ece4] text-[#0e1a2b] px-4 py-3 rounded-xl font-medium text-sm outline-none focus:ring-2 focus:ring-[#EF5B2D]"
                     />
                   )}
                 </div>
@@ -255,7 +255,7 @@ export default function AdminAddCard({ section, onSuccess, className = '' }) {
                 Cancel
               </button>
               <button onClick={handleSave} disabled={saving}
-                className="flex-1 md:flex-none px-6 py-3 rounded-full bg-[#F3592D] text-white font-semibold text-sm hover:bg-[#0e1a2b] transition-colors flex items-center justify-center gap-2 disabled:opacity-50">
+                className="flex-1 md:flex-none px-6 py-3 rounded-full bg-[#EF5B2D] text-white font-semibold text-sm hover:bg-[#0e1a2b] transition-colors flex items-center justify-center gap-2 disabled:opacity-50">
                 {saving
                   ? <><div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" /> Saving...</>
                   : <><Check size={15} strokeWidth={2.5} /> Create</>

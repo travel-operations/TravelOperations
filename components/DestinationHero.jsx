@@ -39,9 +39,9 @@ const DestinationHero = () => {
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#F3592D] mb-6"
+              className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#EF5B2D] mb-6"
             >
-              <span className="inline-block w-8 h-px bg-[#F3592D] align-middle mr-3"></span>
+              <span className="inline-block w-8 h-px bg-[#EF5B2D] align-middle mr-3"></span>
               {slides[current].eyebrow}
             </motion.p>
             <motion.h1
@@ -51,7 +51,7 @@ const DestinationHero = () => {
               className="display-hero text-white"
             >
               {slides[current].title}
-              <span className="block italic text-[#F3592D]">{slides[current].accent}</span>
+              <span className="block italic text-[#EF5B2D]">{slides[current].accent}</span>
             </motion.h1>
           </motion.div>
         </AnimatePresence>
@@ -69,7 +69,7 @@ const DestinationHero = () => {
               onClick={() => setCurrent(index)}
               aria-label={`Slide ${index + 1}`}
               className={`h-[2px] transition-all duration-500 ${
-                current === index ? "w-12 bg-[#F3592D]" : "w-6 bg-white/30 hover:bg-white/60"
+                current === index ? "w-12 bg-[#EF5B2D]" : "w-6 bg-white/30 hover:bg-white/60"
               }`}
             />
           ))}

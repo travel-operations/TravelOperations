@@ -37,15 +37,15 @@ const Navbar = () => {
       >
         <div className="max-w-[1400px] mx-auto px-4 md:px-6 h-9 flex items-center justify-between">
           <div className="flex items-center gap-6 font-medium">
-            <a href="mailto:info@traveloperations.pk" className="flex items-center gap-1.5 hover:text-[#e7a892] transition-colors">
+            <a href="mailto:info@traveloperations.pk" className="flex items-center gap-1.5 hover:text-[#EF5B2D] transition-colors">
               <Mail size={11} strokeWidth={2} /> info@traveloperations.pk
             </a>
           </div>
           <div className="flex items-center gap-3 font-medium">
-             <a href="https://www.facebook.com/p/Travel-Operations-61550269560647/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-[#e7a892] transition-colors">
+             <a href="https://www.facebook.com/p/Travel-Operations-61550269560647/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-[#EF5B2D] transition-colors">
               <FaFacebookF size={10} /> Facebook
             </a>
-            <a href="https://www.instagram.com/travel__operations/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-[#e7a892] transition-colors">
+            <a href="https://www.instagram.com/travel__operations/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-[#EF5B2D] transition-colors">
               <FaInstagram size={11} /> Instagram
             </a>
           </div>
@@ -74,11 +74,11 @@ const Navbar = () => {
               <li key={link.name} className="relative group">
                 <Link
                   href={link.href}
-                  className="text-[13px] font-semibold text-[#0e1a2b] transition-colors duration-300 group-hover:text-[#F3592D]"
+                  className="text-[13px] font-semibold text-[#0e1a2b] transition-colors duration-300 group-hover:text-[#EF5B2D]"
                 >
                   {link.name}
                 </Link>
-                <span className="absolute -bottom-1.5 left-0 w-0 h-[1px] bg-[#F3592D] transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1.5 left-0 w-0 h-[1px] bg-[#EF5B2D] transition-all duration-300 group-hover:w-full"></span>
               </li>
             ))}
           </ul>
@@ -87,7 +87,7 @@ const Navbar = () => {
             <Link href="/book-now" className="hidden md:flex">
               <button
                 type="button"
-                className="bg-[#0e1a2b] text-white pl-5 pr-4 py-2.5 rounded-full flex items-center gap-2 font-semibold text-xs hover:bg-[#F3592D] transition-colors"
+                className="bg-[#0e1a2b] text-white pl-5 pr-4 py-2.5 rounded-full flex items-center gap-2 font-semibold text-xs hover:bg-[#EF5B2D] transition-colors"
               >
                 <CalendarCheck size={14} strokeWidth={2} />
                 Book now
@@ -131,7 +131,7 @@ const Navbar = () => {
                   type="button"
                   onClick={() => setIsOpen(false)}
                   aria-label="Close menu"
-                  className="p-2 text-[#143656]/60 hover:text-[#F3592D] transition-colors"
+                  className="p-2 text-[#143656]/60 hover:text-[#EF5B2D] transition-colors"
                 >
                   <X size={24} strokeWidth={2} />
                 </button>
@@ -144,10 +144,10 @@ const Navbar = () => {
                       key={link.name}
                       href={link.href}
                       onClick={() => setIsOpen(false)}
-                      className="text-base font-semibold text-[#0e1a2b] hover:text-[#F3592D] transition-colors py-4 border-b border-[#e5dfd4] last:border-0 flex items-center justify-between group"
+                      className="text-base font-semibold text-[#0e1a2b] hover:text-[#EF5B2D] transition-colors py-4 border-b border-[#e5dfd4] last:border-0 flex items-center justify-between group"
                     >
                       {link.name}
-                      <ArrowUpRight size={16} strokeWidth={2} className="text-[#143656]/40 group-hover:text-[#F3592D] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      <ArrowUpRight size={16} strokeWidth={2} className="text-[#143656]/40 group-hover:text-[#EF5B2D] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </Link>
                   ))}
                 </div>
@@ -168,7 +168,7 @@ const Navbar = () => {
                     href="https://www.facebook.com/p/Travel-Operations-61550269560647/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white border border-[#e5dfd4] p-2.5 rounded-full text-[#0e1a2b] hover:bg-[#F3592D] hover:text-white transition-colors"
+                    className="bg-white border border-[#e5dfd4] p-2.5 rounded-full text-[#0e1a2b] hover:bg-[#EF5B2D] hover:text-white transition-colors"
                   >
                     <FaFacebookF size={12} />
                   </a>
@@ -176,7 +176,7 @@ const Navbar = () => {
                     href="https://www.instagram.com/travel__operations/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white border border-[#e5dfd4] p-2.5 rounded-full text-[#0e1a2b] hover:bg-[#F3592D] hover:text-white transition-colors"
+                    className="bg-white border border-[#e5dfd4] p-2.5 rounded-full text-[#0e1a2b] hover:bg-[#EF5B2D] hover:text-white transition-colors"
                   >
                     <FaInstagram size={12} />
                   </a>

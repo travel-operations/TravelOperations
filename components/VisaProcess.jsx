@@ -16,13 +16,13 @@ const VisaProcess = () => {
       <div className="container mx-auto px-6 md:px-10">
         <div className="grid md:grid-cols-12 gap-8 mb-16">
           <div className="md:col-span-5">
-            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#F3592D] mb-4">
-              <span className="inline-block w-8 h-px bg-[#F3592D] align-middle mr-3"></span>
+            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#EF5B2D] mb-4">
+              <span className="inline-block w-8 h-px bg-[#EF5B2D] align-middle mr-3"></span>
               How it works
             </p>
             <h2 className="font-serif text-4xl md:text-6xl text-[#0e1a2b] leading-[0.95]">
               Four steps,<br />
-              <span className="italic text-[#F3592D]">about fifteen days.</span>
+              <span className="italic text-[#EF5B2D]">about fifteen days.</span>
             </h2>
           </div>
           <div className="md:col-span-6 md:col-start-7 md:pt-2">
@@ -40,9 +40,9 @@ const VisaProcess = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-[#fbf9f6] p-7 rounded-2xl border border-[#e5dfd4] hover:border-[#F3592D]/40 transition-colors flex flex-col text-left group relative h-full"
+              className="bg-[#fbf9f6] p-7 rounded-2xl border border-[#e5dfd4] hover:border-[#EF5B2D]/40 transition-colors flex flex-col text-left group relative h-full"
             >
-              <span className="editorial-num text-[#F3592D] text-5xl md:text-6xl mb-2">
+              <span className="editorial-num text-[#EF5B2D] text-5xl md:text-6xl mb-2">
                 {String(i + 1).padStart(2, '0')}
               </span>
               <s.icon size={24} className="text-[#0e1a2b] mb-4 mt-2" strokeWidth={1.75} />

@@ -33,13 +33,13 @@ const UmrahFaq = () => {
       <div className="container mx-auto px-6 md:px-10 max-w-5xl">
         <div className="grid md:grid-cols-12 gap-8 mb-14">
           <div className="md:col-span-5">
-            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#F3592D] mb-4">
-              <span className="inline-block w-8 h-px bg-[#F3592D] align-middle mr-3"></span>
+            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#EF5B2D] mb-4">
+              <span className="inline-block w-8 h-px bg-[#EF5B2D] align-middle mr-3"></span>
               Frequently asked
             </p>
             <h2 className="font-serif text-4xl md:text-6xl text-[#0e1a2b] leading-[0.95]">
               Things worth<br />
-              <span className="italic text-[#F3592D]">knowing.</span>
+              <span className="italic text-[#EF5B2D]">knowing.</span>
             </h2>
           </div>
           <div className="md:col-span-7 md:pt-2">
@@ -53,7 +53,7 @@ const UmrahFaq = () => {
           {faqs.map((faq, i) => (
             <div
               key={i}
-              className={`rounded-2xl overflow-hidden border transition-colors duration-300 ${open === i ? 'bg-white border-[#F3592D]/40' : 'bg-white border-[#e5dfd4]'}`}
+              className={`rounded-2xl overflow-hidden border transition-colors duration-300 ${open === i ? 'bg-white border-[#EF5B2D]/40' : 'bg-white border-[#e5dfd4]'}`}
             >
               <button
                 type="button"
@@ -61,10 +61,10 @@ const UmrahFaq = () => {
                 className="w-full p-5 md:p-6 text-left flex justify-between items-center gap-4 hover:bg-[#fbf9f6] transition-colors"
               >
                 <span className="flex items-baseline gap-4">
-                  <span className="editorial-num text-[#F3592D] text-2xl md:text-3xl shrink-0">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="editorial-num text-[#EF5B2D] text-2xl md:text-3xl shrink-0">{String(i + 1).padStart(2, '0')}</span>
                   <span className="font-serif text-[#0e1a2b] text-lg md:text-xl">{faq.q}</span>
                 </span>
-                <span className={`shrink-0 p-2 rounded-full transition-colors ${open === i ? 'bg-[#F3592D] text-white' : 'bg-[#f1ece4] text-[#0e1a2b]'}`}>
+                <span className={`shrink-0 p-2 rounded-full transition-colors ${open === i ? 'bg-[#EF5B2D] text-white' : 'bg-[#f1ece4] text-[#0e1a2b]'}`}>
                   {open === i ? <Minus size={14} strokeWidth={2} /> : <Plus size={14} strokeWidth={2} />}
                 </span>
               </button>

@@ -37,8 +37,8 @@ const TourCard = ({ tour, delay = 0 }) => (
     transition={{ delay, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
     className={`bg-white rounded-2xl overflow-hidden flex flex-col transition-colors group h-full ${
       tour.featured
-        ? 'border-2 border-[#F3592D] shadow-[0_20px_60px_-30px_rgba(243,89,45,0.7)]'
-        : 'border border-[#e5dfd4] hover:border-[#F3592D]/40'
+        ? 'border-2 border-[#EF5B2D] shadow-[0_20px_60px_-30px_rgba(239,91,45,0.7)]'
+        : 'border border-[#e5dfd4] hover:border-[#EF5B2D]/40'
     }`}
   >
     <div className="relative h-56 md:h-60 overflow-hidden">
@@ -54,7 +54,7 @@ const TourCard = ({ tour, delay = 0 }) => (
           {tour.code || tour.country?.slice(0, 2)}
         </span>
         {tour.badge && (
-          <span className={`text-white text-[10px] font-semibold tracking-wide backdrop-blur px-2.5 py-1 rounded-sm ${tour.featured ? 'bg-[#F3592D]' : 'bg-[#0e1a2b]/55'}`}>
+          <span className={`text-white text-[10px] font-semibold tracking-wide backdrop-blur px-2.5 py-1 rounded-sm ${tour.featured ? 'bg-[#EF5B2D]' : 'bg-[#0e1a2b]/55'}`}>
             {tour.featured ? '★ Featured' : tour.badge}
           </span>
         )}
@@ -63,20 +63,20 @@ const TourCard = ({ tour, delay = 0 }) => (
       <button
         type="button"
         aria-label="Save"
-        className="absolute top-4 right-4 bg-white/95 backdrop-blur p-2 rounded-full text-[#0e1a2b]/40 hover:text-[#F3592D] transition-colors"
+        className="absolute top-4 right-4 bg-white/95 backdrop-blur p-2 rounded-full text-[#0e1a2b]/40 hover:text-[#EF5B2D] transition-colors"
       >
         <Heart size={14} strokeWidth={2} />
       </button>
 
       <div className="absolute bottom-4 left-4 flex items-center gap-1.5 bg-white/95 backdrop-blur px-2.5 py-1 rounded-full">
-        <Star size={11} className="text-[#F3592D]" fill="currentColor" />
+        <Star size={11} className="text-[#EF5B2D]" fill="currentColor" />
         <span className="text-[11px] font-bold text-[#0e1a2b]">{tour.rating || 4.9}</span>
         <span className="text-[10px] text-[#143656]/50">({tour.reviews || 124})</span>
       </div>
     </div>
 
     <div className="p-5 md:p-6 grow flex flex-col">
-      <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#F3592D] mb-2">
+      <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#EF5B2D] mb-2">
         {tour.country}
       </p>
       <h3 className="font-serif text-[22px] text-[#0e1a2b] leading-tight mb-4">
@@ -85,10 +85,10 @@ const TourCard = ({ tour, delay = 0 }) => (
 
       <div className="space-y-1.5 mb-5 text-[12px] text-[#143656]/75">
         <div className="flex items-center gap-2">
-          <Clock size={13} className="text-[#F3592D]" strokeWidth={2} /> {tour.duration}
+          <Clock size={13} className="text-[#EF5B2D]" strokeWidth={2} /> {tour.duration}
         </div>
         <div className="flex items-center gap-2">
-          <MapPin size={13} className="text-[#F3592D]" strokeWidth={2} /> {tour.country}
+          <MapPin size={13} className="text-[#EF5B2D]" strokeWidth={2} /> {tour.country}
         </div>
       </div>
 
@@ -102,7 +102,7 @@ const TourCard = ({ tour, delay = 0 }) => (
         <Link href={`/tours/${tour.id}`}>
           <button
             type="button"
-            className="bg-[#0e1a2b] text-white px-4 py-2.5 rounded-full hover:bg-[#F3592D] transition-colors flex items-center gap-1.5 text-[11px] font-semibold"
+            className="bg-[#0e1a2b] text-white px-4 py-2.5 rounded-full hover:bg-[#EF5B2D] transition-colors flex items-center gap-1.5 text-[11px] font-semibold"
           >
             View trip
             <ArrowUpRight size={13} strokeWidth={2.5} />
@@ -123,7 +123,7 @@ const TourRow = ({ title, accent, subtitle, data }) => {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 gap-6">
         <div>
           <h3 className="font-serif text-4xl md:text-5xl text-[#0e1a2b] leading-tight">
-            {title} <span className="italic text-[#F3592D]">{accent}</span>
+            {title} <span className="italic text-[#EF5B2D]">{accent}</span>
           </h3>
           {subtitle && <p className="text-sm md:text-base text-[#143656]/70 mt-2 max-w-md">{subtitle}</p>}
         </div>

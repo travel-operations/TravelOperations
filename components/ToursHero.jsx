@@ -40,9 +40,9 @@ const ToursHero = () => {
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#F3592D] mb-6"
+              className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#EF5B2D] mb-6"
             >
-              <span className="inline-block w-8 h-px bg-[#F3592D] align-middle mr-3"></span>
+              <span className="inline-block w-8 h-px bg-[#EF5B2D] align-middle mr-3"></span>
               {toursSlides[current].eyebrow}
             </motion.p>
             <motion.h1
@@ -52,7 +52,7 @@ const ToursHero = () => {
               className="display-hero text-white"
             >
               {toursSlides[current].title}
-              <span className="block italic text-[#F3592D]">{toursSlides[current].accent}</span>
+              <span className="block italic text-[#EF5B2D]">{toursSlides[current].accent}</span>
             </motion.h1>
           </motion.div>
         </AnimatePresence>
@@ -64,21 +64,21 @@ const ToursHero = () => {
           className="bg-[#fbf9f6] rounded-2xl shadow-[0_30px_60px_-20px_rgba(14,26,43,0.45)] mt-12 w-full max-w-4xl p-4 grid grid-cols-1 md:grid-cols-4 gap-3"
         >
           <label className="flex items-center gap-3 bg-white border border-[#e5dfd4] rounded-xl px-3 py-2.5 cursor-pointer">
-            <MapPin size={16} className="text-[#F3592D]" strokeWidth={2} />
+            <MapPin size={16} className="text-[#EF5B2D]" strokeWidth={2} />
             <div className="flex-1 min-w-0">
               <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#143656]/60">Destination</div>
               <input className="w-full bg-transparent text-sm font-semibold text-[#0e1a2b] outline-none placeholder:text-[#143656]/40" placeholder="All Countries …" />
             </div>
           </label>
           <label className="flex items-center gap-3 bg-white border border-[#e5dfd4] rounded-xl px-3 py-2.5 cursor-pointer">
-            <Calendar size={16} className="text-[#F3592D]" strokeWidth={2} />
+            <Calendar size={16} className="text-[#EF5B2D]" strokeWidth={2} />
             <div className="flex-1 min-w-0">
               <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#143656]/60">Departure</div>
               <input type="date" className="w-full bg-transparent text-sm font-semibold text-[#0e1a2b] outline-none" />
             </div>
           </label>
           <label className="flex items-center gap-3 bg-white border border-[#e5dfd4] rounded-xl px-3 py-2.5 cursor-pointer">
-            <Users size={16} className="text-[#F3592D]" strokeWidth={2} />
+            <Users size={16} className="text-[#EF5B2D]" strokeWidth={2} />
             <div className="flex-1 min-w-0">
               <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#143656]/60">Travellers</div>
               <input className="w-full bg-transparent text-sm font-semibold text-[#0e1a2b] outline-none placeholder:text-[#143656]/40" placeholder="adults" />
@@ -86,7 +86,7 @@ const ToursHero = () => {
           </label>
           <button
             type="button"
-            className="bg-[#0e1a2b] hover:bg-[#F3592D] text-white px-6 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition-colors"
+            className="bg-[#0e1a2b] hover:bg-[#EF5B2D] text-white px-6 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition-colors"
           >
             <Search size={15} strokeWidth={2.5} /> Find tours
           </button>
@@ -105,7 +105,7 @@ const ToursHero = () => {
               onClick={() => setCurrent(index)}
               aria-label={`Slide ${index + 1}`}
               className={`h-[2px] transition-all duration-500 ${
-                current === index ? "w-12 bg-[#F3592D]" : "w-6 bg-white/30 hover:bg-white/60"
+                current === index ? "w-12 bg-[#EF5B2D]" : "w-6 bg-white/30 hover:bg-white/60"
               }`}
             />
           ))}

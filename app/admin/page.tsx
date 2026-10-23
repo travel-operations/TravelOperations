@@ -344,7 +344,7 @@ export default function AdminPage() {
   if (authLoading) {
     return (
       <div className="min-h-screen bg-[#0e1a2b] flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-[#e7a892] border-t-transparent rounded-full animate-spin" />
+        <div className="w-8 h-8 border-2 border-[#EF5B2D] border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -356,7 +356,7 @@ export default function AdminPage() {
           <div className="bg-[#fbf9f6] rounded-3xl p-8 shadow-2xl">
             <div className="mb-7">
               <h1 className="font-serif text-4xl text-[#0e1a2b] leading-tight">
-                Admin <span className="italic text-[#F3592D]">Panel</span>
+                Admin <span className="italic text-[#EF5B2D]">Panel</span>
               </h1>
               <p className="text-[#143656]/60 text-sm mt-1">Travel Operations · Dashboard</p>
             </div>
@@ -371,22 +371,22 @@ export default function AdminPage() {
                 <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-[#143656]/55 mb-1.5">Email</label>
                 <input type="email" value={email} onChange={e => setEmail(e.target.value)}
                   placeholder="info@traveloperations.pk" required
-                  className="w-full bg-[#f1ece4] text-[#0e1a2b] px-5 py-3.5 rounded-full font-medium placeholder:text-[#143656]/35 outline-none focus:ring-2 focus:ring-[#F3592D]" />
+                  className="w-full bg-[#f1ece4] text-[#0e1a2b] px-5 py-3.5 rounded-full font-medium placeholder:text-[#143656]/35 outline-none focus:ring-2 focus:ring-[#EF5B2D]" />
               </div>
               <div>
                 <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-[#143656]/55 mb-1.5">Password</label>
                 <div className="relative">
                   <input type={showPw ? 'text' : 'password'} value={password} onChange={e => setPassword(e.target.value)}
                     placeholder="••••••••" required
-                    className="w-full bg-[#f1ece4] text-[#0e1a2b] px-5 py-3.5 rounded-full font-medium placeholder:text-[#143656]/35 outline-none focus:ring-2 focus:ring-[#F3592D] pr-12" />
+                    className="w-full bg-[#f1ece4] text-[#0e1a2b] px-5 py-3.5 rounded-full font-medium placeholder:text-[#143656]/35 outline-none focus:ring-2 focus:ring-[#EF5B2D] pr-12" />
                   <button type="button" onClick={() => setShowPw(v => !v)}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-[#143656]/50 hover:text-[#F3592D] transition-colors">
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-[#143656]/50 hover:text-[#EF5B2D] transition-colors">
                     {showPw ? <EyeOff size={16} /> : <Eye size={16} />}
                   </button>
                 </div>
               </div>
               <button type="submit" disabled={loginLoading || !supabase}
-                className="w-full bg-[#0e1a2b] text-white py-3.5 rounded-full font-semibold hover:bg-[#F3592D] transition-colors flex items-center justify-center gap-2 disabled:opacity-50">
+                className="w-full bg-[#0e1a2b] text-white py-3.5 rounded-full font-semibold hover:bg-[#EF5B2D] transition-colors flex items-center justify-center gap-2 disabled:opacity-50">
                 {loginLoading
                   ? <><div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" /> Signing in...</>
                   : 'Sign in'}
@@ -419,7 +419,7 @@ export default function AdminPage() {
         <div className="p-5 border-b border-white/10">
           <div className="flex items-center justify-between">
             <div>
-              <div className="font-serif text-xl text-white leading-tight">Travel <span className="italic text-[#e7a892]">Ops</span></div>
+              <div className="font-serif text-xl text-white leading-tight">Travel <span className="italic text-[#EF5B2D]">Ops</span></div>
               <div className="text-[10px] text-white/40 uppercase tracking-widest mt-0.5">Admin Dashboard</div>
             </div>
             <button onClick={() => setMobileMenuOpen(false)} className="md:hidden text-white/60 hover:text-white p-1"><X size={20} /></button>
@@ -441,7 +441,7 @@ export default function AdminPage() {
                   const Icon = sec.icon;
                   return (
                     <button key={key} onClick={() => { setActiveSection(key); setMobileMenuOpen(false); }}
-                      className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium transition-colors text-left ${activeSection === key ? 'bg-[#F3592D] text-white' : 'text-white/70 hover:bg-white/10 hover:text-white'}`}>
+                      className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium transition-colors text-left ${activeSection === key ? 'bg-[#EF5B2D] text-white' : 'text-white/70 hover:bg-white/10 hover:text-white'}`}>
                       <Icon size={15} strokeWidth={2} className="shrink-0" />
                       {sec.label}
                     </button>
@@ -473,7 +473,7 @@ export default function AdminPage() {
             <div>
               <div className="flex items-center gap-2">
                 {currentSection.pageLabel && (
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#F3592D] hidden md:inline">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#EF5B2D] hidden md:inline">
                     {currentSection.pageLabel} ·
                   </span>
                 )}
@@ -489,7 +489,7 @@ export default function AdminPage() {
           </div>
           {activeSection !== 'overview' && (
             <button onClick={() => openAddForm()}
-              className="bg-[#F3592D] text-white px-4 md:px-6 py-2.5 rounded-full font-semibold text-sm flex items-center gap-2 hover:bg-[#0e1a2b] transition-colors shrink-0 shadow-md">
+              className="bg-[#EF5B2D] text-white px-4 md:px-6 py-2.5 rounded-full font-semibold text-sm flex items-center gap-2 hover:bg-[#0e1a2b] transition-colors shrink-0 shadow-md">
               <Plus size={16} strokeWidth={2.5} />
               <span className="hidden sm:inline">Add {currentSection.label}</span>
               <span className="sm:hidden">Add</span>
@@ -517,7 +517,7 @@ export default function AdminPage() {
               {OVERVIEW_GROUPS.map(group => (
                 <div key={group.page}>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#F3592D]">{group.page}</span>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#EF5B2D]">{group.page}</span>
                     <div className="flex-1 h-px bg-[#e5dfd4]" />
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -526,16 +526,16 @@ export default function AdminPage() {
                       const Icon = sec.icon;
                       const count = overviewCounts[key] ?? '—';
                       return (
-                        <div key={key} className="bg-white rounded-2xl border border-[#e5dfd4] p-5 flex flex-col gap-4 shadow-sm hover:border-[#F3592D]/40 transition-colors">
+                        <div key={key} className="bg-white rounded-2xl border border-[#e5dfd4] p-5 flex flex-col gap-4 shadow-sm hover:border-[#EF5B2D]/40 transition-colors">
                           <div className="flex items-start justify-between">
                             <div className="flex items-center gap-3">
                               <div className="w-10 h-10 rounded-xl bg-[#f1ece4] flex items-center justify-center shrink-0">
-                                <Icon size={18} className="text-[#F3592D]" strokeWidth={2} />
+                                <Icon size={18} className="text-[#EF5B2D]" strokeWidth={2} />
                               </div>
                               <div>
                                 <p className="font-semibold text-[#0e1a2b] text-sm">{sec.label}</p>
                                 {sec.category && (
-                                  <span className="text-[10px] font-semibold text-[#F3592D] uppercase tracking-wider">{sec.category.replace('_', ' ')}</span>
+                                  <span className="text-[10px] font-semibold text-[#EF5B2D] uppercase tracking-wider">{sec.category.replace('_', ' ')}</span>
                                 )}
                               </div>
                             </div>
@@ -547,7 +547,7 @@ export default function AdminPage() {
                               <Pencil size={12} strokeWidth={2} /> Manage
                             </button>
                             <button onClick={() => openAddForm(key)}
-                              className="flex-1 py-2 rounded-full bg-[#F3592D] text-white text-xs font-semibold hover:bg-[#0e1a2b] transition-colors flex items-center justify-center gap-1.5">
+                              className="flex-1 py-2 rounded-full bg-[#EF5B2D] text-white text-xs font-semibold hover:bg-[#0e1a2b] transition-colors flex items-center justify-center gap-1.5">
                               <Plus size={12} strokeWidth={2.5} /> Add Card
                             </button>
                           </div>
@@ -560,7 +560,7 @@ export default function AdminPage() {
             </div>
           ) : dataLoading ? (
             <div className="bg-white rounded-2xl p-16 flex items-center justify-center border border-[#e5dfd4]">
-              <div className="w-8 h-8 border-2 border-[#F3592D] border-t-transparent rounded-full animate-spin" />
+              <div className="w-8 h-8 border-2 border-[#EF5B2D] border-t-transparent rounded-full animate-spin" />
             </div>
           ) : rows.length === 0 ? (
             <div className="bg-white rounded-2xl p-12 md:p-20 text-center border border-[#e5dfd4]">
@@ -569,7 +569,7 @@ export default function AdminPage() {
               </div>
               <p className="text-[#143656]/60 text-sm mb-6">No {currentSection.label.toLowerCase()} yet.</p>
               <button onClick={() => openAddForm()}
-                className="bg-[#0e1a2b] text-white px-6 py-3 rounded-full font-semibold text-sm hover:bg-[#F3592D] transition-colors inline-flex items-center gap-2">
+                className="bg-[#0e1a2b] text-white px-6 py-3 rounded-full font-semibold text-sm hover:bg-[#EF5B2D] transition-colors inline-flex items-center gap-2">
                 <Plus size={15} /> Add first item
               </button>
             </div>
@@ -629,7 +629,7 @@ export default function AdminPage() {
                   </table>
                 </div>
                 <button onClick={() => openAddForm()}
-                  className="w-full flex items-center justify-center gap-2 px-4 py-4 text-sm font-semibold text-[#F3592D] hover:bg-[#f1ece4] transition-colors border-t border-dashed border-[#e5dfd4]">
+                  className="w-full flex items-center justify-center gap-2 px-4 py-4 text-sm font-semibold text-[#EF5B2D] hover:bg-[#f1ece4] transition-colors border-t border-dashed border-[#e5dfd4]">
                   <Plus size={16} strokeWidth={2.5} /> Add new {currentSection.label}
                 </button>
               </div>
@@ -670,7 +670,7 @@ export default function AdminPage() {
                   </div>
                 ))}
                 <button onClick={() => openAddForm()}
-                  className="w-full flex items-center justify-center gap-2 px-4 py-5 rounded-2xl bg-white border-2 border-dashed border-[#F3592D]/40 text-[#F3592D] font-semibold text-sm hover:bg-[#F3592D] hover:text-white hover:border-[#F3592D] transition-colors shadow-sm">
+                  className="w-full flex items-center justify-center gap-2 px-4 py-5 rounded-2xl bg-white border-2 border-dashed border-[#EF5B2D]/40 text-[#EF5B2D] font-semibold text-sm hover:bg-[#EF5B2D] hover:text-white hover:border-[#EF5B2D] transition-colors shadow-sm">
                   <Plus size={18} strokeWidth={2.5} /> Add new {currentSection.label}
                 </button>
               </div>
@@ -688,7 +688,7 @@ export default function AdminPage() {
                 <div>
                   <h2 className="font-serif text-2xl text-[#0e1a2b]">{editId ? 'Edit' : 'Add'} {currentSection.label}</h2>
                   {currentSection.pageLabel && (
-                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#F3592D] mt-0.5">{currentSection.pageLabel}</p>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#EF5B2D] mt-0.5">{currentSection.pageLabel}</p>
                   )}
                 </div>
               </div>
@@ -699,12 +699,12 @@ export default function AdminPage() {
               {fields.map(f => (
                 <div key={f.key}>
                   <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-[#143656]/60 mb-2">
-                    {f.label} {f.required && <span className="text-[#F3592D]">*</span>}
+                    {f.label} {f.required && <span className="text-[#EF5B2D]">*</span>}
                   </label>
 
                   {f.type === 'checkbox' ? (
                     <label className="flex items-center gap-3 cursor-pointer">
-                      <div className={`w-11 h-6 rounded-full transition-colors relative ${formData[f.key] ? 'bg-[#F3592D]' : 'bg-[#e5dfd4]'}`}
+                      <div className={`w-11 h-6 rounded-full transition-colors relative ${formData[f.key] ? 'bg-[#EF5B2D]' : 'bg-[#e5dfd4]'}`}
                         onClick={() => handleFieldChange(f.key, !formData[f.key])}>
                         <div className={`absolute top-1 w-4 h-4 rounded-full bg-white shadow transition-all ${formData[f.key] ? 'left-6' : 'left-1'}`} />
                       </div>
@@ -715,9 +715,9 @@ export default function AdminPage() {
                     <div className="space-y-3">
                       <input type="text" value={formData[f.key] || ''} onChange={e => handleFieldChange(f.key, e.target.value)}
                         placeholder="Paste image URL or upload below"
-                        className="w-full bg-[#f1ece4] text-[#0e1a2b] px-4 py-3 rounded-xl font-medium text-sm placeholder:text-[#143656]/40 outline-none focus:ring-2 focus:ring-[#F3592D]" />
+                        className="w-full bg-[#f1ece4] text-[#0e1a2b] px-4 py-3 rounded-xl font-medium text-sm placeholder:text-[#143656]/40 outline-none focus:ring-2 focus:ring-[#EF5B2D]" />
                       <div className="flex items-center gap-3 flex-wrap">
-                        <label className={`cursor-pointer flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-colors ${uploading ? 'bg-[#f1ece4] text-[#143656]/50' : 'bg-[#0e1a2b] text-white hover:bg-[#F3592D]'}`}>
+                        <label className={`cursor-pointer flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-colors ${uploading ? 'bg-[#f1ece4] text-[#143656]/50' : 'bg-[#0e1a2b] text-white hover:bg-[#EF5B2D]'}`}>
                           {uploading
                             ? <><div className="w-3.5 h-3.5 border-2 border-current border-t-transparent rounded-full animate-spin" /> Uploading...</>
                             : <><Upload size={13} /> Upload image</>}
@@ -737,11 +737,11 @@ export default function AdminPage() {
 
                   ) : f.textarea ? (
                     <textarea rows={4} value={formData[f.key] || ''} onChange={e => handleFieldChange(f.key, e.target.value)}
-                      className="w-full bg-[#f1ece4] text-[#0e1a2b] px-4 py-3 rounded-xl font-medium text-sm outline-none focus:ring-2 focus:ring-[#F3592D] resize-none" />
+                      className="w-full bg-[#f1ece4] text-[#0e1a2b] px-4 py-3 rounded-xl font-medium text-sm outline-none focus:ring-2 focus:ring-[#EF5B2D] resize-none" />
                   ) : (
                     <input type={f.type} value={formData[f.key] ?? ''} readOnly={f.readonly}
                       onChange={e => !f.readonly && handleFieldChange(f.key, f.type === 'number' ? Number(e.target.value) : e.target.value)}
-                      className={`w-full bg-[#f1ece4] text-[#0e1a2b] px-4 py-3 rounded-xl font-medium text-sm outline-none focus:ring-2 focus:ring-[#F3592D] ${f.readonly ? 'opacity-60 cursor-not-allowed' : ''}`} />
+                      className={`w-full bg-[#f1ece4] text-[#0e1a2b] px-4 py-3 rounded-xl font-medium text-sm outline-none focus:ring-2 focus:ring-[#EF5B2D] ${f.readonly ? 'opacity-60 cursor-not-allowed' : ''}`} />
                   )}
                 </div>
               ))}
@@ -753,7 +753,7 @@ export default function AdminPage() {
                 Cancel
               </button>
               <button onClick={handleSave}
-                className="flex-1 md:flex-none px-6 py-3 rounded-full bg-[#F3592D] text-white font-semibold text-sm hover:bg-[#0e1a2b] transition-colors flex items-center justify-center gap-2">
+                className="flex-1 md:flex-none px-6 py-3 rounded-full bg-[#EF5B2D] text-white font-semibold text-sm hover:bg-[#0e1a2b] transition-colors flex items-center justify-center gap-2">
                 <Check size={15} strokeWidth={2.5} /> {editId ? 'Update' : 'Create'}
               </button>
             </div>
@@ -794,7 +794,7 @@ create policy "travel_images_delete" on storage.objects
               </div>
               <div className="flex gap-3">
                 <button onClick={() => { navigator.clipboard.writeText(`insert into storage.buckets (id, name, public)\nvalues ('travel-images', 'travel-images', true)\non conflict (id) do update set public = true;\n\ndrop policy if exists "travel_images_insert" on storage.objects;\ndrop policy if exists "travel_images_select" on storage.objects;\ndrop policy if exists "travel_images_update" on storage.objects;\ndrop policy if exists "travel_images_delete" on storage.objects;\n\ncreate policy "travel_images_select" on storage.objects\n  for select using (bucket_id = 'travel-images');\ncreate policy "travel_images_insert" on storage.objects\n  for insert with check (bucket_id = 'travel-images');\ncreate policy "travel_images_update" on storage.objects\n  for update using (bucket_id = 'travel-images');\ncreate policy "travel_images_delete" on storage.objects\n  for delete using (bucket_id = 'travel-images');`); showToast('SQL copied!'); }}
-                  className="flex-1 bg-[#0e1a2b] text-white py-3 rounded-full font-semibold text-sm hover:bg-[#F3592D] transition-colors">
+                  className="flex-1 bg-[#0e1a2b] text-white py-3 rounded-full font-semibold text-sm hover:bg-[#EF5B2D] transition-colors">
                   Copy SQL
                 </button>
                 <button onClick={() => setShowStorageFix(false)}

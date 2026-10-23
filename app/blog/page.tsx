@@ -41,8 +41,8 @@ export default function BlogPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#0e1a2b] via-[#0e1a2b]/55 to-[#0e1a2b]/30"></div>
         </div>
         <div className="container mx-auto px-6 md:px-10 relative z-10 text-white">
-          <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#e7a892] mb-4">
-            <span className="inline-block w-8 h-px bg-[#e7a892] align-middle mr-3"></span>
+          <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#EF5B2D] mb-4">
+            <span className="inline-block w-8 h-px bg-[#EF5B2D] align-middle mr-3"></span>
             Travel Operations · Blog
           </p>
           <motion.h1
@@ -51,12 +51,12 @@ export default function BlogPage() {
             className="display-hero"
           >
             Travel<br />
-            <span className="italic text-[#e7a892]">blog.</span>
+            <span className="italic text-[#EF5B2D]">blog.</span>
           </motion.h1>
           <nav className="flex gap-2 text-xs font-semibold mt-6 text-white/60">
-            <Link href="/" className="hover:text-[#e7a892] transition-colors">Home</Link>
+            <Link href="/" className="hover:text-[#EF5B2D] transition-colors">Home</Link>
             <span>/</span>
-            <span className="text-[#e7a892]">Blog</span>
+            <span className="text-[#EF5B2D]">Blog</span>
           </nav>
         </div>
       </section>
@@ -64,13 +64,13 @@ export default function BlogPage() {
       <section className="py-20 md:py-28 container mx-auto px-6 md:px-10">
         <div className="grid md:grid-cols-12 gap-8 mb-14">
           <div className="md:col-span-7">
-            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#F3592D] mb-4">
-              <span className="inline-block w-8 h-px bg-[#F3592D] align-middle mr-3"></span>
+            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#EF5B2D] mb-4">
+              <span className="inline-block w-8 h-px bg-[#EF5B2D] align-middle mr-3"></span>
               Recent stories
             </p>
             <h2 className="font-serif text-[40px] md:text-6xl text-[#0e1a2b] leading-[0.95]">
               Travel guides<br />
-              <span className="italic text-[#F3592D]">straight from the trip.</span>
+              <span className="italic text-[#EF5B2D]">straight from the trip.</span>
             </h2>
           </div>
           <div className="md:col-span-4 md:col-start-9 md:pt-3">
@@ -88,7 +88,7 @@ export default function BlogPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                className="bg-white rounded-2xl overflow-hidden border border-[#e5dfd4] group flex flex-col h-full hover:border-[#F3592D]/40 transition-colors"
+                className="bg-white rounded-2xl overflow-hidden border border-[#e5dfd4] group flex flex-col h-full hover:border-[#EF5B2D]/40 transition-colors"
               >
                 <div className="relative h-60 overflow-hidden">
                   <img src={blog.image} className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-[1.06]" alt={blog.title} />
@@ -102,9 +102,9 @@ export default function BlogPage() {
                     <span className="flex items-center gap-1.5"><User size={12} strokeWidth={2} /> {blog.author}</span>
                     <span className="flex items-center gap-1.5"><MessageCircle size={12} strokeWidth={2} /> 0 comments</span>
                   </div>
-                  <h3 className="font-serif text-2xl text-[#0e1a2b] mb-3 leading-tight group-hover:text-[#F3592D] transition-colors line-clamp-2">{blog.title}</h3>
+                  <h3 className="font-serif text-2xl text-[#0e1a2b] mb-3 leading-tight group-hover:text-[#EF5B2D] transition-colors line-clamp-2">{blog.title}</h3>
                   <p className="text-[#143656]/75 text-[14px] mb-6 line-clamp-3 leading-relaxed">{blog.excerpt}</p>
-                  <Link href={`/blog/${blog.slug}`} className="mt-auto inline-flex items-center gap-2 text-[#0e1a2b] hover:text-[#F3592D] text-[12px] font-semibold border-b border-[#0e1a2b] hover:border-[#F3592D] pb-1 self-start transition-colors">
+                  <Link href={`/blog/${blog.slug}`} className="mt-auto inline-flex items-center gap-2 text-[#0e1a2b] hover:text-[#EF5B2D] text-[12px] font-semibold border-b border-[#0e1a2b] hover:border-[#EF5B2D] pb-1 self-start transition-colors">
                     Read article <ArrowUpRight size={13} strokeWidth={2.5} />
                   </Link>
                 </div>

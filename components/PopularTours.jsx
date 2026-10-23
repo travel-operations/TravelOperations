@@ -44,8 +44,8 @@ const TourRow = ({ toursData }) => {
               transition={{ delay: ci * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className={`bg-[#fbf9f6] rounded-2xl overflow-hidden flex flex-col group transition-colors ${
                 tour.featured
-                  ? 'border-2 border-[#F3592D] shadow-[0_20px_60px_-30px_rgba(243,89,45,0.7)]'
-                  : 'border border-[#e5dfd4] hover:border-[#F3592D]/40'
+                  ? 'border-2 border-[#EF5B2D] shadow-[0_20px_60px_-30px_rgba(239,91,45,0.7)]'
+                  : 'border border-[#e5dfd4] hover:border-[#EF5B2D]/40'
               }`}
             >
               <div className="relative h-64 overflow-hidden">
@@ -54,27 +54,27 @@ const TourRow = ({ toursData }) => {
                   <span className="bg-[#fbf9f6] text-[#0e1a2b] text-[10px] font-bold tracking-[0.18em] uppercase px-2.5 py-1 rounded-sm">
                     {tour.code}
                   </span>
-                  <span className={`text-white text-[11px] font-semibold tracking-wide backdrop-blur-sm px-2.5 py-1 rounded-sm ${tour.featured ? 'bg-[#F3592D]' : 'bg-[#0e1a2b]/55'}`}>
+                  <span className={`text-white text-[11px] font-semibold tracking-wide backdrop-blur-sm px-2.5 py-1 rounded-sm ${tour.featured ? 'bg-[#EF5B2D]' : 'bg-[#0e1a2b]/55'}`}>
                     {tour.featured ? '★ Featured' : tour.badge}
                   </span>
                 </div>
                 <button type="button" aria-label="Save"
-                  className="absolute top-4 right-4 bg-white/95 backdrop-blur p-2 rounded-full text-[#0e1a2b]/40 hover:text-[#F3592D] transition-colors">
+                  className="absolute top-4 right-4 bg-white/95 backdrop-blur p-2 rounded-full text-[#0e1a2b]/40 hover:text-[#EF5B2D] transition-colors">
                   <Heart size={15} strokeWidth={2} />
                 </button>
                 <div className="absolute bottom-4 left-4 flex items-center gap-1.5 bg-white/95 backdrop-blur px-2.5 py-1 rounded-full">
-                  <Star size={11} className="text-[#F3592D]" fill="currentColor" />
+                  <Star size={11} className="text-[#EF5B2D]" fill="currentColor" />
                   <span className="text-[11px] font-bold text-[#0e1a2b]">{tour.rating}</span>
                 </div>
               </div>
 
               <div className="p-6 grow flex flex-col">
-                <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#F3592D] mb-2">{tour.country}</p>
+                <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#EF5B2D] mb-2">{tour.country}</p>
                 <h3 className="font-serif text-2xl text-[#0e1a2b] mb-4 leading-tight">{tour.title}</h3>
                 <div className="grid grid-cols-2 gap-y-2 mb-5 text-[12px] text-[#143656]/70">
-                  <div className="flex items-center gap-1.5"><Clock size={13} className="text-[#F3592D]" strokeWidth={2} /> {tour.duration}</div>
-                  <div className="flex items-center gap-1.5"><Users size={13} className="text-[#F3592D]" strokeWidth={2} /> Max {tour.group_size}</div>
-                  <div className="flex items-center gap-1.5 col-span-2"><MapPin size={13} className="text-[#F3592D]" strokeWidth={2} /> {tour.location}</div>
+                  <div className="flex items-center gap-1.5"><Clock size={13} className="text-[#EF5B2D]" strokeWidth={2} /> {tour.duration}</div>
+                  <div className="flex items-center gap-1.5"><Users size={13} className="text-[#EF5B2D]" strokeWidth={2} /> Max {tour.group_size}</div>
+                  <div className="flex items-center gap-1.5 col-span-2"><MapPin size={13} className="text-[#EF5B2D]" strokeWidth={2} /> {tour.location}</div>
                 </div>
                 <div className="flex justify-between items-end border-t border-[#e5dfd4] pt-4 mt-auto">
                   <div>
@@ -86,7 +86,7 @@ const TourRow = ({ toursData }) => {
                   </div>
                   <Link href="/book-now">
                     <button type="button"
-                      className="bg-[#0e1a2b] text-white px-4 py-3 rounded-full hover:bg-[#F3592D] transition-colors flex items-center gap-2 text-xs font-semibold">
+                      className="bg-[#0e1a2b] text-white px-4 py-3 rounded-full hover:bg-[#EF5B2D] transition-colors flex items-center gap-2 text-xs font-semibold">
                       Reserve <ArrowUpRight size={14} strokeWidth={2.5} />
                     </button>
                   </Link>
@@ -137,13 +137,13 @@ const PopularTours = () => {
       <div className="container mx-auto px-6 md:px-10">
         <div className="grid md:grid-cols-12 gap-8 items-end mb-14 md:mb-20">
           <div className="md:col-span-7">
-            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#F3592D] mb-4">
-              <span className="inline-block w-8 h-px bg-[#F3592D] align-middle mr-3"></span>
+            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#EF5B2D] mb-4">
+              <span className="inline-block w-8 h-px bg-[#EF5B2D] align-middle mr-3"></span>
               Hand-picked journeys
               
             </p>
             <h2 className="font-serif text-[44px] md:text-7xl leading-[0.95] text-[#0e1a2b] tracking-tight">
-              Special offers, <span className="italic text-[#F3592D]">carefully composed.</span>
+              Special offers, <span className="italic text-[#EF5B2D]">carefully composed.</span>
             </h2>
           </div>
           <div className="md:col-span-4 md:col-start-9">
@@ -152,7 +152,7 @@ const PopularTours = () => {
             </p>
             <Link href="/tours">
               <button type="button"
-                className="inline-flex items-center gap-2 text-[#0e1a2b] font-semibold text-sm border-b border-[#0e1a2b] pb-1 hover:border-[#F3592D] hover:text-[#F3592D] transition-colors">
+                className="inline-flex items-center gap-2 text-[#0e1a2b] font-semibold text-sm border-b border-[#0e1a2b] pb-1 hover:border-[#EF5B2D] hover:text-[#EF5B2D] transition-colors">
                 View the full catalogue <ArrowUpRight size={15} strokeWidth={2.5} />
               </button>
             </Link>

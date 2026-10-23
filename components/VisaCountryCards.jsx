@@ -40,13 +40,13 @@ const VisaCountryCards = () => {
       <div className="container mx-auto px-6 md:px-10">
         <div className="grid md:grid-cols-12 gap-8 mb-16">
           <div className="md:col-span-7">
-            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#F3592D] mb-4">
-              <span className="inline-block w-8 h-px bg-[#F3592D] align-middle mr-3"></span>
+            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#EF5B2D] mb-4">
+              <span className="inline-block w-8 h-px bg-[#EF5B2D] align-middle mr-3"></span>
               Pick your next destination
             </p>
             <h2 className="font-serif text-[44px] md:text-7xl leading-[0.95] text-[#0e1a2b] tracking-tight">
               Transparent pricing,<br />
-              <span className="italic text-[#F3592D]">live success rates.</span>
+              <span className="italic text-[#EF5B2D]">live success rates.</span>
             </h2>
           </div>
           <div className="md:col-span-4 md:col-start-9 md:pt-2">
@@ -58,8 +58,8 @@ const VisaCountryCards = () => {
 
         {featured.length > 0 && (
           <div className="mb-10">
-            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#F3592D] mb-6">
-              <span className="inline-block w-8 h-px bg-[#F3592D] align-middle mr-3"></span>
+            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#EF5B2D] mb-6">
+              <span className="inline-block w-8 h-px bg-[#EF5B2D] align-middle mr-3"></span>
               Featured destination
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -70,7 +70,7 @@ const VisaCountryCards = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.06 }}
                   viewport={{ once: true }}
-                  className="bg-[#0e1a2b] rounded-2xl overflow-hidden border-2 border-[#F3592D] shadow-[0_20px_60px_-20px_rgba(243,89,45,0.5)] group flex flex-col h-full col-span-1 md:col-span-2 lg:col-span-1"
+                  className="bg-[#0e1a2b] rounded-2xl overflow-hidden border-2 border-[#EF5B2D] shadow-[0_20px_60px_-20px_rgba(239,91,45,0.5)] group flex flex-col h-full col-span-1 md:col-span-2 lg:col-span-1"
                 >
                   <div className="relative h-64 overflow-hidden">
                     <img
@@ -81,7 +81,7 @@ const VisaCountryCards = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0e1a2b]/80 to-transparent"></div>
 
                     <div className="absolute top-4 left-4 flex items-center gap-2">
-                      <span className="bg-[#F3592D] text-white text-[10px] font-bold tracking-[0.18em] uppercase px-2.5 py-1 rounded-sm">
+                      <span className="bg-[#EF5B2D] text-white text-[10px] font-bold tracking-[0.18em] uppercase px-2.5 py-1 rounded-sm">
                         ★ Featured
                       </span>
                       <span className="bg-[#fbf9f6] text-[#0e1a2b] text-[10px] font-bold tracking-[0.18em] uppercase px-2.5 py-1 rounded-sm">
@@ -93,7 +93,7 @@ const VisaCountryCards = () => {
                     </div>
 
                     <div className="absolute bottom-4 left-4 right-4 text-white">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#e7a892] mb-1">{country.type}</p>
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#EF5B2D] mb-1">{country.type}</p>
                       <h3 className="font-serif text-3xl leading-tight">{country.name}</h3>
                     </div>
                   </div>
@@ -101,17 +101,17 @@ const VisaCountryCards = () => {
                   <div className="p-5 flex flex-col grow">
                     <div className="flex items-center gap-1.5 mb-4">
                       {[1, 2, 3, 4, 5].map((s) => (
-                        <Star key={s} size={13} className="text-[#e7a892]" fill="currentColor" />
+                        <Star key={s} size={13} className="text-[#EF5B2D]" fill="currentColor" />
                       ))}
-                      <span className="text-[#e7a892] text-xs font-semibold ml-1">Top Pick 2026</span>
+                      <span className="text-[#EF5B2D] text-xs font-semibold ml-1">Top Pick 2026</span>
                     </div>
 
                     <div className="grid grid-cols-2 gap-3 mb-5 text-[12px] text-[#fbf9f6]/70">
                       <div className="flex items-center gap-1.5">
-                        <Clock size={13} className="text-[#e7a892]" strokeWidth={2} /> {country.processing}
+                        <Clock size={13} className="text-[#EF5B2D]" strokeWidth={2} /> {country.processing}
                       </div>
                       <div className="flex items-center gap-1.5">
-                        <Plane size={13} className="text-[#e7a892]" strokeWidth={2} /> {country.validity}
+                        <Plane size={13} className="text-[#EF5B2D]" strokeWidth={2} /> {country.validity}
                       </div>
                     </div>
 
@@ -119,7 +119,7 @@ const VisaCountryCards = () => {
                       <div className="flex justify-between items-end mb-4">
                         <div>
                           <div className="text-[10px] uppercase tracking-[0.2em] text-[#fbf9f6]/50 font-semibold">From</div>
-                          <div className="font-serif text-2xl text-[#e7a892] leading-none mt-1">
+                          <div className="font-serif text-2xl text-[#EF5B2D] leading-none mt-1">
                             PKR {country.price}
                           </div>
                         </div>
@@ -128,7 +128,7 @@ const VisaCountryCards = () => {
                       <Link href="/book-now">
                         <button
                           type="button"
-                          className="w-full bg-[#F3592D] text-white py-3 rounded-full font-semibold text-xs hover:bg-[#e7a892] hover:text-[#0e1a2b] transition-colors flex items-center justify-center gap-2"
+                          className="w-full bg-[#EF5B2D] text-white py-3 rounded-full font-semibold text-xs hover:bg-[#EF5B2D] hover:text-[#0e1a2b] transition-colors flex items-center justify-center gap-2"
                         >
                           Apply now <ArrowUpRight size={13} strokeWidth={2.5} />
                         </button>
@@ -149,7 +149,7 @@ const VisaCountryCards = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.06 }}
               viewport={{ once: true }}
-              className="bg-[#fbf9f6] rounded-2xl overflow-hidden border border-[#e5dfd4] group flex flex-col h-full hover:border-[#F3592D]/40 transition-colors"
+              className="bg-[#fbf9f6] rounded-2xl overflow-hidden border border-[#e5dfd4] group flex flex-col h-full hover:border-[#EF5B2D]/40 transition-colors"
             >
               <div className="relative h-52 overflow-hidden">
                 <img
@@ -169,7 +169,7 @@ const VisaCountryCards = () => {
                 </div>
 
                 <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#e7a892] mb-1">{country.type}</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#EF5B2D] mb-1">{country.type}</p>
                   <h3 className="font-serif text-2xl leading-tight">{country.name}</h3>
                 </div>
               </div>
@@ -177,10 +177,10 @@ const VisaCountryCards = () => {
               <div className="p-5 flex flex-col grow">
                 <div className="grid grid-cols-2 gap-3 mb-5 text-[12px] text-[#143656]/75">
                   <div className="flex items-center gap-1.5">
-                    <Clock size={13} className="text-[#F3592D]" strokeWidth={2} /> {country.processing}
+                    <Clock size={13} className="text-[#EF5B2D]" strokeWidth={2} /> {country.processing}
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <Plane size={13} className="text-[#F3592D]" strokeWidth={2} /> {country.validity}
+                    <Plane size={13} className="text-[#EF5B2D]" strokeWidth={2} /> {country.validity}
                   </div>
                 </div>
 
@@ -197,7 +197,7 @@ const VisaCountryCards = () => {
                   <Link href="/book-now">
                     <button
                       type="button"
-                      className="w-full bg-[#0e1a2b] text-white py-3 rounded-full font-semibold text-xs hover:bg-[#F3592D] transition-colors flex items-center justify-center gap-2"
+                      className="w-full bg-[#0e1a2b] text-white py-3 rounded-full font-semibold text-xs hover:bg-[#EF5B2D] transition-colors flex items-center justify-center gap-2"
                     >
                       Apply now <ArrowUpRight size={13} strokeWidth={2.5} />
                     </button>

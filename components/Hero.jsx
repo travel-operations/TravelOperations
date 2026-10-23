@@ -61,7 +61,7 @@ const Field = ({ icon: Icon, label, placeholder, type = 'text' }) => (
   <label className="flex flex-col gap-1 bg-white hover:bg-[#fbf9f6] border border-[#e5dfd4] rounded-xl px-3 py-2.5 transition-colors cursor-pointer">
     <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#143656]/60">{label}</span>
     <div className="flex items-center gap-2">
-      <Icon size={15} className="text-[#F3592D] shrink-0" strokeWidth={2} />
+      <Icon size={15} className="text-[#EF5B2D] shrink-0" strokeWidth={2} />
       <input
         type={type}
         placeholder={placeholder}
@@ -108,7 +108,7 @@ const SearchWidget = () => {
               onClick={() => setTripType(t)}
               className={`px-3 py-1 text-[11px] font-semibold tracking-wide rounded-full border transition-all ${
                 tripType === t
-                  ? 'bg-[#F3592D] text-white border-[#F3592D]'
+                  ? 'bg-[#EF5B2D] text-white border-[#EF5B2D]'
                   : 'border-[#e5dfd4] text-[#143656]/70 hover:border-[#143656]'
               }`}
             >
@@ -136,7 +136,7 @@ const SearchWidget = () => {
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mt-5">
         <button
           type="button"
-          className="bg-[#F3592D] hover:bg-[#0e1a2b] text-white px-7 py-3.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition-all shadow-lg active:scale-[0.98]"
+          className="bg-[#EF5B2D] hover:bg-[#0e1a2b] text-white px-7 py-3.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition-all shadow-lg active:scale-[0.98]"
         >
           <Search size={16} strokeWidth={2.5} /> Search {TABS.find(t => t.id === activeTab)?.label}
         </button>
@@ -201,8 +201,8 @@ const HeroSlider = () => {
                 transition={{ duration: 0.5 }}
                 className="flex items-center gap-3 mb-6"
               >
-                <Compass size={16} className="text-[#F3592D]" strokeWidth={2} />
-                <span className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#F3592D]">
+                <Compass size={16} className="text-[#EF5B2D]" strokeWidth={2} />
+                <span className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#EF5B2D]">
                   {slide.eyebrow}
                 </span>
               </motion.div>
@@ -215,7 +215,7 @@ const HeroSlider = () => {
               >
                 {slide.title}
                 {titleAccent && (
-                  <span className="block italic text-[#F3592D]">{titleAccent}</span>
+                  <span className="block italic text-[#EF5B2D]">{titleAccent}</span>
                 )}
               </motion.h1>
 
@@ -237,7 +237,7 @@ const HeroSlider = () => {
                 <Link href={slide.href || '/tours'}>
                   <button
                     type="button"
-                    className="bg-[#fbf9f6] text-[#0e1a2b] pl-6 pr-5 py-3.5 rounded-full font-semibold text-sm flex items-center gap-2 hover:bg-[#F3592D] hover:text-white transition-colors shadow-xl"
+                    className="bg-[#fbf9f6] text-[#0e1a2b] pl-6 pr-5 py-3.5 rounded-full font-semibold text-sm flex items-center gap-2 hover:bg-[#EF5B2D] hover:text-white transition-colors shadow-xl"
                   >
                     {btnText}
                     <ArrowUpRight size={16} strokeWidth={2.5} />
@@ -246,7 +246,7 @@ const HeroSlider = () => {
                 <Link href="/tours">
                   <button
                     type="button"
-                    className="text-white pl-2 pr-3 py-3 rounded-full font-semibold text-sm flex items-center gap-2 hover:text-[#F3592D] transition-colors"
+                    className="text-white pl-2 pr-3 py-3 rounded-full font-semibold text-sm flex items-center gap-2 hover:text-[#EF5B2D] transition-colors"
                   >
                     <Map size={16} strokeWidth={2} />
                     Browse all tours
@@ -274,7 +274,7 @@ const HeroSlider = () => {
               onClick={() => setCurrent(index)}
               aria-label={`Go to slide ${index + 1}`}
               className={`h-[2px] transition-all duration-500 ${
-                current === index ? "w-12 bg-[#F3592D]" : "w-6 bg-white/30 hover:bg-white/60"
+                current === index ? "w-12 bg-[#EF5B2D]" : "w-6 bg-white/30 hover:bg-white/60"
               }`}
             />
           ))}

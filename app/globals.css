@@ -5,9 +5,9 @@
   --foreground: #0e1a2b;
   --brand-deep: #0e1a2b;
   --brand-blue: #143656;
-  --brand-coral: #F3592D;
-  --brand-orange: #F3592D;
-  --brand-coral-soft: #e7a892;
+  --brand-coral: #EF5B2D;
+  --brand-orange: #EF5B2D;
+  --brand-coral-soft: #EF5B2D;
   --brand-cream: #fbf9f6;
   --brand-sand: #f1ece4;
   --brand-ink: #1c1c1c;
@@ -16,7 +16,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-brand-orange: #F3592D;
+  --color-brand-orange: #EF5B2D;
   --color-brand-coral: var(--brand-coral);
   --font-sans: var(--font-sans, "Manrope", ui-sans-serif, system-ui);
   --font-serif: var(--font-serif, "Instrument Serif", Georgia, serif);
@@ -94,7 +94,7 @@ body {
 .bg-paper {
   background-color: var(--brand-cream);
   background-image:
-    radial-gradient(at 20% 10%, rgba(243,89,45,0.06) 0px, transparent 50%),
+    radial-gradient(at 20% 10%, rgba(239,91,45,0.06) 0px, transparent 50%),
     radial-gradient(at 80% 80%, rgba(20,54,86,0.05) 0px, transparent 50%);
 }
 

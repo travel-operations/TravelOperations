@@ -48,13 +48,13 @@ const VisaConsultancy = () => {
       <div className="container mx-auto px-6 md:px-10">
         <div className="flex flex-col md:flex-row justify-between md:items-end gap-8 mb-14 md:mb-20">
           <div className="max-w-2xl">
-            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#F3592D] mb-4">
-              <span className="inline-block w-8 h-px bg-[#F3592D] align-middle mr-3"></span>
+            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#EF5B2D] mb-4">
+              <span className="inline-block w-8 h-px bg-[#EF5B2D] align-middle mr-3"></span>
               Visa consultancy
             </p>
             <h2 className="font-serif text-[44px] md:text-6xl leading-[0.95] text-[#0e1a2b] tracking-tight">
               Embassy-grade paperwork,<br />
-              <span className="italic text-[#F3592D]">drafted by people who've done it 15,000 times.</span>
+              <span className="italic text-[#EF5B2D]">drafted by people who've done it 15,000 times.</span>
             </h2>
           </div>
           <div className="flex gap-2 shrink-0">
@@ -99,14 +99,14 @@ const VisaConsultancy = () => {
                 </div>
 
                 <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#e7a892] mb-2">{visa.type}</p>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#EF5B2D] mb-2">{visa.type}</p>
                   <h3 className="font-serif text-3xl md:text-4xl leading-[0.95] mb-3">{visa.country}</h3>
                   <div className="flex items-center gap-2 text-[12px] font-medium text-white/85 mb-5">
-                    <Clock size={13} className="text-[#e7a892]" strokeWidth={2} /> {visa.processing}
+                    <Clock size={13} className="text-[#EF5B2D]" strokeWidth={2} /> {visa.processing}
                   </div>
                   <Link href="/visa">
                     <button type="button"
-                      className="inline-flex items-center gap-2 bg-white text-[#0e1a2b] pl-4 pr-3 py-2 rounded-full text-xs font-semibold hover:bg-[#F3592D] hover:text-white transition-colors">
+                      className="inline-flex items-center gap-2 bg-white text-[#0e1a2b] pl-4 pr-3 py-2 rounded-full text-xs font-semibold hover:bg-[#EF5B2D] hover:text-white transition-colors">
                       Check eligibility <ArrowUpRight size={14} strokeWidth={2.5} />
                     </button>
                   </Link>
@@ -123,7 +123,7 @@ const VisaConsultancy = () => {
           </div>
           <Link href="/visa">
             <button type="button"
-              className="bg-[#0e1a2b] text-white px-6 py-3.5 rounded-full font-semibold text-sm hover:bg-[#F3592D] transition-colors inline-flex items-center gap-2 shrink-0">
+              className="bg-[#0e1a2b] text-white px-6 py-3.5 rounded-full font-semibold text-sm hover:bg-[#EF5B2D] transition-colors inline-flex items-center gap-2 shrink-0">
               <FileCheck2 size={16} strokeWidth={2} /> Book free consultation
             </button>
           </Link>

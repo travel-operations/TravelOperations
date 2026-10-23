@@ -22,13 +22,13 @@ const WhyChooseUs = () => {
           viewport={{ once: true }}
           className="bg-[#0e1a2b] text-white p-10 md:p-16 rounded-3xl mb-20 relative overflow-hidden grain"
         >
-          <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#F3592D]/25 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#EF5B2D]/25 rounded-full blur-3xl pointer-events-none"></div>
           <div className="relative max-w-4xl">
-            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#e7a892] mb-6">
+            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#EF5B2D] mb-6">
               Our promise
             </p>
             <p className="font-serif text-2xl md:text-4xl leading-[1.15] text-[#fbf9f6]">
-              "A full-service travel desk with one job: to deliver outstanding service at market-competitive rates. The freedom we give our customers is what makes this work feel <span className="italic text-[#e7a892]">meaningful</span>."
+              "A full-service travel desk with one job: to deliver outstanding service at market-competitive rates. The freedom we give our customers is what makes this work feel <span className="italic text-[#EF5B2D]">meaningful</span>."
             </p>
             <p className="text-[12px] mt-8 uppercase tracking-[0.3em] text-white/50">
               Travel Operations · Founded 2015
@@ -38,13 +38,13 @@ const WhyChooseUs = () => {
 
         <div className="grid md:grid-cols-12 gap-6 md:gap-10 mb-12">
           <div className="md:col-span-4">
-            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#F3592D] mb-4">
-              <span className="inline-block w-8 h-px bg-[#F3592D] align-middle mr-3"></span>
+            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#EF5B2D] mb-4">
+              <span className="inline-block w-8 h-px bg-[#EF5B2D] align-middle mr-3"></span>
               Why choose us
             </p>
             <h2 className="font-serif text-4xl md:text-5xl text-[#0e1a2b] leading-[0.95]">
               Six reasons<br />
-              <span className="italic text-[#F3592D]">people stay.</span>
+              <span className="italic text-[#EF5B2D]">people stay.</span>
             </h2>
           </div>
 
@@ -58,7 +58,7 @@ const WhyChooseUs = () => {
                 transition={{ delay: index * 0.06 }}
                 className="bg-white hover:bg-[#0e1a2b] border border-[#e5dfd4] rounded-2xl p-5 flex flex-col group cursor-default transition-colors"
               >
-                <item.icon size={20} className="text-[#F3592D] group-hover:text-[#e7a892] mb-4 transition-colors" strokeWidth={1.75} />
+                <item.icon size={20} className="text-[#EF5B2D] group-hover:text-[#EF5B2D] mb-4 transition-colors" strokeWidth={1.75} />
                 <h4 className="font-serif text-xl text-[#0e1a2b] group-hover:text-white leading-tight mb-1 transition-colors">
                   {item.title}
                 </h4>

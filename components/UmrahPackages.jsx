@@ -88,8 +88,8 @@ const UmrahPackages = ({ featured = false }) => {
       <div className="container mx-auto px-6 md:px-10">
         <div className="grid md:grid-cols-12 gap-6 mb-16 md:mb-20">
           <div className="md:col-span-5">
-            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#F3592D] mb-4">
-              <span className="inline-block w-8 h-px bg-[#F3592D] align-middle mr-3"></span>
+            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#EF5B2D] mb-4">
+              <span className="inline-block w-8 h-px bg-[#EF5B2D] align-middle mr-3"></span>
               Umrah Packages 2026
             </p>
             <h2 className="font-serif text-[44px] md:text-6xl leading-[0.95] text-[#0e1a2b] tracking-tight">
@@ -103,13 +103,13 @@ const UmrahPackages = ({ featured = false }) => {
             </p>
             <div className="mt-6 flex flex-wrap gap-2 text-[11px] font-semibold text-[#143656]">
               <span className="inline-flex items-center gap-1.5 bg-white border border-[#e5dfd4] px-3 py-1.5 rounded-full">
-                <ShieldCheck size={13} className="text-[#F3592D]" strokeWidth={2} /> PSA-licensed
+                <ShieldCheck size={13} className="text-[#EF5B2D]" strokeWidth={2} /> PSA-licensed
               </span>
               <span className="inline-flex items-center gap-1.5 bg-white border border-[#e5dfd4] px-3 py-1.5 rounded-full">
-                <BadgeCheck size={13} className="text-[#F3592D]" strokeWidth={2} /> 20,000+ pilgrims served
+                <BadgeCheck size={13} className="text-[#EF5B2D]" strokeWidth={2} /> 20,000+ pilgrims served
               </span>
               <span className="inline-flex items-center gap-1.5 bg-white border border-[#e5dfd4] px-3 py-1.5 rounded-full">
-                <Phone size={13} className="text-[#F3592D]" strokeWidth={2} /> 24/7 in-trip line
+                <Phone size={13} className="text-[#EF5B2D]" strokeWidth={2} /> 24/7 in-trip line
               </span>
             </div>
           </div>
@@ -127,7 +127,7 @@ const UmrahPackages = ({ featured = false }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className={`bg-white rounded-2xl overflow-hidden border ${highlight ? 'border-[#F3592D] shadow-[0_20px_60px_-30px_rgba(243,89,45,0.6)]' : 'border-[#e5dfd4]'} flex flex-col group`}
+                className={`bg-white rounded-2xl overflow-hidden border ${highlight ? 'border-[#EF5B2D] shadow-[0_20px_60px_-30px_rgba(239,91,45,0.6)]' : 'border-[#e5dfd4]'} flex flex-col group`}
               >
                 <div className="relative aspect-[4/3] shrink-0 overflow-hidden">
                   <img
@@ -137,7 +137,7 @@ const UmrahPackages = ({ featured = false }) => {
                   />
 
                   {highlight && (
-                    <span className="absolute top-4 right-4 bg-[#F3592D] text-white text-[10px] font-bold tracking-[0.2em] uppercase px-2.5 py-1 rounded-sm">
+                    <span className="absolute top-4 right-4 bg-[#EF5B2D] text-white text-[10px] font-bold tracking-[0.2em] uppercase px-2.5 py-1 rounded-sm">
                       Most chosen
                     </span>
                   )}
@@ -145,19 +145,19 @@ const UmrahPackages = ({ featured = false }) => {
 
                 <div className="p-6 flex flex-col grow">
                   <div className="mb-5">
-                    <span className="font-serif italic text-[#F3592D] text-sm">{pkg.tier}</span>
+                    <span className="font-serif italic text-[#EF5B2D] text-sm">{pkg.tier}</span>
                     <h3 className="font-semibold text-lg leading-tight text-[#0e1a2b]">{pkg.title}</h3>
                   </div>
 
                   <div className="space-y-2.5 text-[12px] text-[#143656]/80 mb-5">
                     <div className="flex items-center gap-2">
-                      <Calendar size={14} className="text-[#F3592D] shrink-0" strokeWidth={2} /> {pkg.nights}
+                      <Calendar size={14} className="text-[#EF5B2D] shrink-0" strokeWidth={2} /> {pkg.nights}
                     </div>
                     <div className="flex items-center gap-2">
-                      <Hotel size={14} className="text-[#F3592D] shrink-0" strokeWidth={2} /> {pkg.hotel}
+                      <Hotel size={14} className="text-[#EF5B2D] shrink-0" strokeWidth={2} /> {pkg.hotel}
                     </div>
                     <div className="flex items-center gap-2">
-                      <Star size={14} className="text-[#F3592D] shrink-0" fill="currentColor" /> {pkg.rating} guest rating
+                      <Star size={14} className="text-[#EF5B2D] shrink-0" fill="currentColor" /> {pkg.rating} guest rating
                     </div>
                   </div>
 
@@ -165,13 +165,13 @@ const UmrahPackages = ({ featured = false }) => {
                     <div className="text-[10px] uppercase tracking-[0.2em] text-[#143656]/50 font-semibold mb-1">Per person from</div>
                     <div className="flex items-baseline gap-1.5 mb-5">
                       <span className="font-serif text-3xl text-[#0e1a2b] leading-none">PKR</span>
-                      <span className="font-serif text-3xl text-[#F3592D] leading-none">{pkg.price}</span>
+                      <span className="font-serif text-3xl text-[#EF5B2D] leading-none">{pkg.price}</span>
                     </div>
 
                     <Link href="/book-now">
                       <button
                         type="button"
-                        className="w-full bg-[#0e1a2b] text-white py-3 rounded-full font-semibold text-xs hover:bg-[#F3592D] transition-colors flex items-center justify-center gap-2"
+                        className="w-full bg-[#0e1a2b] text-white py-3 rounded-full font-semibold text-xs hover:bg-[#EF5B2D] transition-colors flex items-center justify-center gap-2"
                       >
                         Reserve seat
                         <ArrowUpRight size={14} strokeWidth={2.5} />
