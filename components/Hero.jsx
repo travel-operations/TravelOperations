@@ -211,7 +211,7 @@ const HeroSlider = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="display-hero text-white mb-5"
+                className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-5 leading-[1.08] tracking-tight"
               >
                 {slide.title}
                 {titleAccent && (
