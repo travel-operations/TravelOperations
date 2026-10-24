@@ -126,7 +126,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 /* Fluid, fully-responsive display headings — scale smoothly with viewport */
 .display-hero {
   font-family: var(--font-serif);
-  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   line-height: 0.92;
   letter-spacing: -0.02em;
 }
