@@ -63,13 +63,13 @@ const TourCard = ({ tour, delay = 0 }) => (
       <button
         type="button"
         aria-label="Save"
-        className="absolute top-4 right-4 bg-white/95 backdrop-blur p-2 rounded-full text-[#0e1a2b]/40 hover:text-[#EF5B2D] transition-colors"
+        className="absolute top-4 right-4 bg-white/95 backdrop-blur p-2 rounded-full text-[#EF5B2D] hover:scale-110 transition-all"
       >
         <Heart size={14} strokeWidth={2} />
       </button>
 
       <div className="absolute bottom-4 left-4 flex items-center gap-1.5 bg-white/95 backdrop-blur px-2.5 py-1 rounded-full">
-        <Star size={11} className="text-[#EF5B2D]" fill="currentColor" />
+        <Star size={12} className="text-[#EF5B2D]" fill="currentColor" />
         <span className="text-[11px] font-bold text-[#0e1a2b]">{tour.rating || 4.9}</span>
         <span className="text-[10px] text-[#143656]/50">({tour.reviews || 124})</span>
       </div>
@@ -83,12 +83,12 @@ const TourCard = ({ tour, delay = 0 }) => (
         {tour.title}
       </h3>
 
-      <div className="space-y-1.5 mb-5 text-[12px] text-[#143656]/75">
-        <div className="flex items-center gap-2">
-          <Clock size={13} className="text-[#EF5B2D]" strokeWidth={2} /> {tour.duration}
+      <div className="space-y-2 mb-5 text-[12px] text-[#143656]/75">
+        <div className="flex items-start gap-2">
+          <Clock size={14} className="text-[#EF5B2D] shrink-0 mt-0.5" strokeWidth={2.2} /> <span>{tour.duration}</span>
         </div>
-        <div className="flex items-center gap-2">
-          <MapPin size={13} className="text-[#EF5B2D]" strokeWidth={2} /> {tour.country}
+        <div className="flex items-start gap-2">
+          <MapPin size={14} className="text-[#EF5B2D] shrink-0 mt-0.5" strokeWidth={2.2} /> <span>{tour.country}</span>
         </div>
       </div>
 

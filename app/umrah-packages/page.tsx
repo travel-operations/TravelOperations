@@ -127,8 +127,8 @@ export default function UmrahPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
             <div className="bg-[#fbf9f6] p-10 rounded-2xl border border-[#e5dfd4]">
-              <h3 className="font-serif text-3xl text-[#EF5B2D] mb-8 flex items-center gap-3">
-                <MapPin size={22} strokeWidth={2} /> Makkah
+              <h3 className="font-serif text-3xl text-[#0e1a2b] mb-8 flex items-center gap-3">
+                <MapPin size={22} className="text-[#EF5B2D]" strokeWidth={2} /> Makkah
               </h3>
               <ul className="space-y-3 text-[#0e1a2b]/85 text-[15px] font-medium">
                 <li>· Masjid Al Haram & Kaaba</li>

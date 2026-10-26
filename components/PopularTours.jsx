@@ -59,11 +59,11 @@ const TourRow = ({ toursData }) => {
                   </span>
                 </div>
                 <button type="button" aria-label="Save"
-                  className="absolute top-4 right-4 bg-white/95 backdrop-blur p-2 rounded-full text-[#0e1a2b]/40 hover:text-[#EF5B2D] transition-colors">
+                  className="absolute top-4 right-4 bg-white/95 backdrop-blur p-2 rounded-full text-[#EF5B2D] hover:scale-110 transition-all">
                   <Heart size={15} strokeWidth={2} />
                 </button>
                 <div className="absolute bottom-4 left-4 flex items-center gap-1.5 bg-white/95 backdrop-blur px-2.5 py-1 rounded-full">
-                  <Star size={11} className="text-[#EF5B2D]" fill="currentColor" />
+                  <Star size={12} className="text-[#EF5B2D]" fill="currentColor" />
                   <span className="text-[11px] font-bold text-[#0e1a2b]">{tour.rating}</span>
                 </div>
               </div>
@@ -71,10 +71,10 @@ const TourRow = ({ toursData }) => {
               <div className="p-6 grow flex flex-col">
                 <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#EF5B2D] mb-2">{tour.country}</p>
                 <h3 className="font-serif text-2xl text-[#0e1a2b] mb-4 leading-tight">{tour.title}</h3>
-                <div className="grid grid-cols-2 gap-y-2 mb-5 text-[12px] text-[#143656]/70">
-                  <div className="flex items-center gap-1.5"><Clock size={13} className="text-[#EF5B2D]" strokeWidth={2} /> {tour.duration}</div>
-                  <div className="flex items-center gap-1.5"><Users size={13} className="text-[#EF5B2D]" strokeWidth={2} /> Max {tour.group_size}</div>
-                  <div className="flex items-center gap-1.5 col-span-2"><MapPin size={13} className="text-[#EF5B2D]" strokeWidth={2} /> {tour.location}</div>
+                <div className="grid grid-cols-2 gap-y-2.5 mb-5 text-[12px] text-[#143656]/70">
+                  <div className="flex items-start gap-1.5"><Clock size={14} className="text-[#EF5B2D] shrink-0 mt-0.5" strokeWidth={2.2} /> <span>{tour.duration}</span></div>
+                  <div className="flex items-start gap-1.5"><Users size={14} className="text-[#EF5B2D] shrink-0 mt-0.5" strokeWidth={2.2} /> <span>Max {tour.group_size}</span></div>
+                  <div className="flex items-start gap-1.5 col-span-2"><MapPin size={14} className="text-[#EF5B2D] shrink-0 mt-0.5" strokeWidth={2.2} /> <span>{tour.location}</span></div>
                 </div>
                 <div className="flex justify-between items-end border-t border-[#e5dfd4] pt-4 mt-auto">
                   <div>

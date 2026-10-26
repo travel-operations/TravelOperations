@@ -88,7 +88,7 @@ const VisaCountryCards = () => {
                         {country.code}
                       </span>
                       <span className="inline-flex items-center gap-1 bg-[#0e1a2b]/55 backdrop-blur text-white text-[10px] font-semibold px-2.5 py-1 rounded-sm">
-                        <BadgeCheck size={10} strokeWidth={2.5} /> {country.success}
+                        <BadgeCheck size={11} strokeWidth={2.5} className="text-[#EF5B2D]" /> {country.success}
                       </span>
                     </div>
 
@@ -108,10 +108,10 @@ const VisaCountryCards = () => {
 
                     <div className="grid grid-cols-2 gap-3 mb-5 text-[12px] text-[#fbf9f6]/70">
                       <div className="flex items-center gap-1.5">
-                        <Clock size={13} className="text-[#EF5B2D]" strokeWidth={2} /> {country.processing}
+                        <Clock size={14} className="text-[#EF5B2D] shrink-0" strokeWidth={2.2} /> {country.processing}
                       </div>
                       <div className="flex items-center gap-1.5">
-                        <Plane size={13} className="text-[#EF5B2D]" strokeWidth={2} /> {country.validity}
+                        <Plane size={14} className="text-[#EF5B2D] shrink-0" strokeWidth={2.2} /> {country.validity}
                       </div>
                     </div>
 
@@ -164,7 +164,7 @@ const VisaCountryCards = () => {
                     {country.code}
                   </span>
                   <span className="inline-flex items-center gap-1 bg-[#0e1a2b]/55 backdrop-blur text-white text-[10px] font-semibold px-2.5 py-1 rounded-sm">
-                    <BadgeCheck size={10} strokeWidth={2.5} /> {country.success}
+                    <BadgeCheck size={11} strokeWidth={2.5} className="text-[#EF5B2D]" /> {country.success}
                   </span>
                 </div>
 
@@ -177,10 +177,10 @@ const VisaCountryCards = () => {
               <div className="p-5 flex flex-col grow">
                 <div className="grid grid-cols-2 gap-3 mb-5 text-[12px] text-[#143656]/75">
                   <div className="flex items-center gap-1.5">
-                    <Clock size={13} className="text-[#EF5B2D]" strokeWidth={2} /> {country.processing}
+                    <Clock size={14} className="text-[#EF5B2D] shrink-0" strokeWidth={2.2} /> {country.processing}
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <Plane size={13} className="text-[#EF5B2D]" strokeWidth={2} /> {country.validity}
+                    <Plane size={14} className="text-[#EF5B2D] shrink-0" strokeWidth={2.2} /> {country.validity}
                   </div>
                 </div>
 
